@@ -1,0 +1,220 @@
+p, a, td, th, input{
+	font-family: sans-serif;
+}
+
+.admlogin{
+	background-color: ghostwhite;
+	text-align: center;
+	padding: 5px;
+	border: 1px grey;
+	border-style: outset;
+	border-radius:15px;
+}
+
+.admtitleback{
+	background-image: linear-gradient(to right, darkblue, mediumblue);
+	border-radius:8px;
+}
+
+.admtitletext{
+	font-weight: bold;
+	color: white;
+	padding: 6px 8px;
+}
+
+.menu{
+	background-color:ghostwhite;
+	border:1px solid slategrey;
+	border-style:outset;
+	border-radius:6px;
+	padding: 5px 8px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	color: black;
+}
+
+.menu:hover{
+	background-color:darkblue;
+	border:1px solid lightslategrey;
+	border-style:inset;
+	border-radius:6px;
+	padding: 5px 8px;
+	text-align: center;	
+	text-decoration: none;
+	display: inline-block;
+	color: white;
+}
+
+.button{
+	background-color:ghostwhite;
+	border:1px solid slategrey;
+	border-style:outset;
+	border-radius:6px;
+	padding: 5px 8px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	color: black;
+}
+
+.button:hover{
+	background-color:darkblue;
+	border:1px solid lightslategrey;
+	border-style:inset;
+	border-radius:6px;
+	padding: 5px 8px;
+	text-align: center;	
+	text-decoration: none;
+	display: inline-block;
+	color: white;
+}
+
+.admtabtitle {
+	color:rgb(31, 31, 31);
+	text-align: center;
+	font-weight: bold;
+}
+.admtabinfo {
+	color:rgb(31, 31, 31);
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.lista{
+	background-color: ghostwhite;
+	padding: 5px;
+	border-radius:5px;
+}
+
+.linhalista{
+	border:1px solid slategrey;
+	text-align: center;
+}
+
+.subbut{
+	background-color:darkblue;
+	border:1px solid slategrey;
+	border-style:outset;
+	border-radius:8px;
+	padding: 2px 4px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 60%;
+	display: inline-block;
+	color: white;
+
+}
+
+.subbut:hover{
+	background-color:lightblue;
+	border:1px solid lightslategrey;
+	border-style:inset;
+	border-radius:8px;
+	padding: 2px 4px;
+	text-align: center;	
+	text-decoration: none;
+	display: inline-block;
+	font-size: 60%;
+	color: black;
+}
+
+@keyframes atencao {
+	0% {background-color: white;}
+	33% {background-color:red;}
+	66% {background-color: white;}
+}
+
+@keyframes selecao {
+	0% {background-color: white;}
+	33% {background-color:rgba(155, 155, 155, 0.5);}
+	66% {background-color: white;}
+}
+
+.input{
+	border-color: darkgrey;
+	border-style:inset;
+}
+
+.input:focus {
+	border-color: darkgrey;
+	border-style:inset;
+	background-color:rgba(155, 155, 155, 0.5);
+	outline:none;
+	animation-name: selecao;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.submit{
+	color:black;
+	font-weight:bold;
+	font-size:12px;
+	padding: 3px;
+	margin: 0 75%;
+	border:1px solid grey;
+	border-style:outset;
+	border-radius:5px;
+	background-image: linear-gradient(to top left, lightgray, snow);
+}
+
+.submit:hover{
+	color:white;
+	font-weight:bold;
+	font-size:12px;
+	padding: 3px;
+	margin: 0 75%;
+	border:1px solid navy;
+	border-style:inset;
+	border-radius:5px;
+	background-image: linear-gradient(to top left, navy, darkblue );
+}
+
+.submit:active{
+	color:white;
+	font-weight:bold;
+	font-size:12px;
+	padding: 3px;
+	margin: 0 75%;
+	border:1px solid navy;
+	border-style:inset;
+	border-radius:5px;
+	background-image: linear-gradient(to top left, blue, dodgerblue );
+}
+
+.usersubmit{
+	color:black;
+	height:25px;
+	width:auto;
+	border:1px solid marrom;
+	border-style:outset;
+	border-radius:5px;
+	background-image: linear-gradient(to top left, snow, ghostwhite);
+}
+
+.usersubmit:hover{
+	color:white;
+	font-weight:bold;
+	font-family: sans-serif;
+	height:25px;
+	width:auto;
+	border-color: salmon;
+	border-style:inset;
+	border-radius:5px;
+	background-image: linear-gradient(darkred,firebrick);
+}
+
+span{
+	background-color:red;
+	border-radius:3px;
+	padding:1px 4px;
+	text-align:center;
+	color:white;
+	font-weight:bold;
+	font-size:80%;
+	animation-name: atencao;
+	animation-duration: 1.5s;
+	animation-iteration-count: 6s;
+	animation-direction: alternate;
+}
