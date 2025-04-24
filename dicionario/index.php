@@ -1,6 +1,8 @@
 <?php
 include("../config.php");
 include(constant("SITE_ROOT")."/header.php");
+include("criar.php"); // Incluindo o arquivo de funções
+
 ?>
 <div class="admtitleback">
     <p class="admtitletext">PROJETO - Cadastro de Palavras</p>
@@ -13,6 +15,10 @@ include(constant("SITE_ROOT")."/header.php");
 <p><a class="button" href="<?=constant("SITE_URL");?>/dicionario/adicionar.php">ADICIONAR</a></p>
 <?php
 	$dbObj = new mysql();
+
+	// Chamar a função para verificar e criar a tabela, se necessário
+	checkAndCreateTable($dbObj);
+	
 	$sql = "";
 	$sql .= "SELECT * FROM dicionario ORDER BY PALAVRA_ORIG;";
 	$result = $dbObj->query($sql);
