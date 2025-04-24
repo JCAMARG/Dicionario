@@ -4,6 +4,7 @@
 		public string $db_user;
 		Public string $db_pass;
 		public string $db_name;
+		public $link_id;
 		
 		function __construct() {
 			$this->db_host = constant("_DB_HOST");
