@@ -1,0 +1,2 @@
+# Dicionario
+Dicionario de palavras
