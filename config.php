@@ -11,9 +11,15 @@
 		define("SITE_URL", $protocol . "://" . $host . SITE_SUBFOLDER);
 	}
 	
+	/*
 	define("_DB_HOST", "localhost");
 	define("_DB_USER", "root");
-	define("_DB_PASS","");
+	define("_DB_PASS", "");
+	define("_DB_NAME", "projeto_lab");
+	*/
+	define("_DB_HOST", "dpg-d058nn95pdvs73esracg-a");
+	define("_DB_USER", "projeto_lab_user");
+	define("_DB_PASS", "CBTtiRoIvhWn71vmUAWNXlPTpEQ52XEf");
 	define("_DB_NAME", "projeto_lab");
 	
 	include(SITE_ROOT."/mysql.php");
