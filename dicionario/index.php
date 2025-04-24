@@ -17,7 +17,7 @@ include("criar.php"); // Incluindo o arquivo de funções
 	$dbObj = new mysql();
 
 	// Chamar a função para verificar e criar a tabela, se necessário
-	checkAndCreateTable($dbObj);
+	setupDatabase($dbObj);
 	
 	$sql = "";
 	$sql .= "SELECT * FROM dicionario ORDER BY PALAVRA_ORIG;";
