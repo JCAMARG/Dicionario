@@ -31,7 +31,7 @@ include(constant("SITE_ROOT")."/mysql.php"); // Incluindo o arquivo de funções
 		<th>EDITAR</th>
 	</tr>
 	<?php
-		while ($row = mysqli_fetch_assoc ($result)) {
+		while ($row = pg_fetch_assoc ($result)) {
 			echo "<tr class='linhalista'>";
 				echo "<td class='linhalista'>";
 					echo $row["PALAVRA_ORIG"];
