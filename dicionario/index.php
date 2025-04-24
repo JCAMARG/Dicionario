@@ -17,7 +17,7 @@ include(constant("SITE_ROOT")."/mysql.php"); // Incluindo o arquivo de funções
 	$dbObj = new mysql();
 
 	// Chamar a função para verificar e criar a tabela, se necessário
-	setupDatabase($dbObj);
+	$dbObj->setupDatabase();
 	
 	$sql = "";
 	$sql .= "SELECT * FROM dicionario ORDER BY PALAVRA_ORIG;";
