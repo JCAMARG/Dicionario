@@ -10,3 +10,6 @@ EXPOSE 8000
 
 # Comando para rodar o servidor embutido
 CMD ["php", "-S", "0.0.0.0:8000"]
+
+#  instalação do mysqli
+RUN docker-php-ext-install mysqli
