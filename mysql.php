@@ -1,5 +1,10 @@
 <?php
 	class mysql {
+		public string $db_host;
+		public string $db_user;
+		Public string $db_pass;
+		public string $db_name;
+		
 		function __construct() {
 			$this->db_host = constant("_DB_HOST");
 			$this->db_user = constant("_DB_USER");
