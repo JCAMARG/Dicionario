@@ -4,7 +4,7 @@ FROM php:8.2-cli
 # Instala dependências do sistema e habilita a extensão mysqli
 RUN apt-get update && apt-get install -y \
     libpng-dev libjpeg-dev libonig-dev libxml2-dev zip unzip \
- && docker-php-ext-install mysqli
+ && docker-php-ext-install pgsql pdo_pgsql
 
 # Copia os arquivos do seu projeto para o container
 COPY . /usr/src/myapp
