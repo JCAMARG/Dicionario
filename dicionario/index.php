@@ -1,7 +1,7 @@
 <?php
 include("../config.php");
 include(constant("SITE_ROOT")."/header.php");
-include("criar.php"); // Incluindo o arquivo de funções
+include(constant("SITE_ROOT")."/mysql.php"); // Incluindo o arquivo de funções
 
 ?>
 <div class="admtitleback">
