@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: dicionario-php
+    env: docker
+    plan: free
+    repo: https://github.com/JCAMARG/Dicionario
+    branch: main
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
