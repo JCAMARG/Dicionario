@@ -56,5 +56,73 @@
 		function close() {
 			pg_close($this->link_id);
 	    	}
+
+		// Função para verificar se uma tabela existe
+		function tableExists($tableName) {
+			$query = "SELECT to_regclass('public.$tableName')";
+			$result = $this->query($query);
+			$row = pg_fetch_row($result);
+			
+			return $row[0] ? true : false;
+		}
+		
+		// Função para criar a tabela 'DISCIPLINAS'
+		function createDisciplinaTable() {
+			$createTableSql = "
+				CREATE TABLE IF NOT EXISTS disciplinas (
+				    ID_DISCIPLINA SERIAL PRIMARY KEY,
+				    NOME VARCHAR(255) NOT NULL
+				)";
+			
+			$this->query($createTableSql);
+		}
+		
+		// Função para criar a tabela 'DICIONARIO'
+		function createDicionarioTable() {
+			$createTableSql = "
+				CREATE TABLE IF NOT EXISTS dicionario (
+				    ID SERIAL PRIMARY KEY,
+				    PALAVRA_ORIG VARCHAR(255) NOT NULL,
+				    ID_DISCIPLINA INT NOT NULL,
+				    CONSTRAINT FK_DICIONARIO_DISCIPLINA FOREIGN KEY (ID_DISCIPLINA)
+					REFERENCES disciplinas (ID_DISCIPLINA) ON DELETE CASCADE ON UPDATE CASCADE
+				)";
+			
+			$this->query($createTableSql);
+		}
+		
+		// Função para inserir dados na tabela 'DISCIPLINAS', somente se estiver vazia
+		function insertDisciplinaData() {
+			// Verifica se a tabela 'DISCIPLINAS' está vazia
+			$checkSql = "SELECT COUNT(*) FROM disciplinas";
+			$result = $this->query($checkSql);
+			$row = pg_fetch_row($result);
+			
+			if ($row[0] == 0) { // Se a tabela estiver vazia, insere os dados
+				$insertSql = "
+					INSERT INTO disciplinas (ID_DISCIPLINA, NOME) VALUES
+					(1, 'ESTRUTURA DE DADOS'),
+					(2, 'FUNDAMENTOS DE REDES DE COMPUTADORES'),
+					(3, 'ESTATISTICA')
+					";
+				
+				$this->query($insertSql);
+			}
+		}
+		
+		// Função principal para configurar o banco de dados (criar tabelas e inserir dados)
+		function setupDatabase() {
+			// Criar as tabelas, se necessário
+			if (!$this->tableExists('disciplinas')) {
+				$this->createDisciplinaTable();
+			}
+			
+			if (!$this->tableExists('dicionario')) {
+				$this->createDicionarioTable();
+			}
+			
+			// Inserir dados na tabela 'DISCIPLINAS' se necessário
+			$this->insertDisciplinaData();
+		}
 	}
 ?>
