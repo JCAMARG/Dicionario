@@ -13,6 +13,8 @@ include(constant("SITE_ROOT")."/header.php");
 <p><a class="button" href="<?=constant("SITE_URL");?>/disciplina/adicionar.php">ADICIONAR</a></p>
 <?php
 	$dbObj = new mysql();
+	$dbObj->setupDatabase();
+
 	$sql = "";
 	$sql .= "SELECT * FROM disciplinas ORDER BY NOME;";
 	$result = $dbObj->query($sql);
@@ -25,7 +27,7 @@ include(constant("SITE_ROOT")."/header.php");
 		<th>EDITAR</th>
 	</tr>
 	<?php
-		while ($row = mysqli_fetch_assoc ($result)) {
+		while ($row = pg_fetch_assoc ($result)) {
 			echo "<tr class='linhalista'>";
 				echo "<td class='linhalista'>";
 					echo $row["NOME"];
