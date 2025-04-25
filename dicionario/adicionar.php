@@ -93,7 +93,7 @@ if (isset($erro)) {
 				&nbsp;
 			</td>
 			<td>
-				<input type="submit" name="submit" value="Adicionar">
+				<input class="but-confirma" type="submit" name="submit" value="Adicionar">
 			</td>
 		</tr>
 	</table>
