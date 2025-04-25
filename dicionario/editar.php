@@ -26,11 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!$nome) {
 		$erro .= " Nome não pode ser vazio. ";
 	}
-	if (!$preco) {
-		$erro .= " Preço não pode ser vazio. ";
+	if (!$palavra) {
+		$erro .= " Palavra não pode ser vazio. ";
 	}
-	if (!$cat) {
-		$erro .= " Categoria não pode ser vazio. ";
+	if (!$disciplina) {
+		$erro .= " Disciplina não pode ser vazio. ";
 	}	
 	if (!$erro) {
 		$dbObj = new mysql();
