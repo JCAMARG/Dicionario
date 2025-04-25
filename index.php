@@ -8,7 +8,7 @@ include(constant("SITE_ROOT")."/header.php");
         <!-- Combo Box para recriar tabelas -->
         <form action="recriar_tabelas.php" method="GET"  style="margin: 0">
             <select name="acao" style="padding: 5px; font-size: 14px;">
-                <option value=""><Opçoes para carga inicial></option>
+                <option value="">&lt;Opções para carga inicial&gt;</option>
                 <option value="criar_disciplinas">Recriar Tabela Disciplinas</option>
                 <option value="criar_dicionario">Recriar Tabela Dicionário</option>
                 <option value="ins_disc">Carregar dados Disciplinas</option>
