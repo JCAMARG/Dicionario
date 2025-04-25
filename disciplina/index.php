@@ -1,6 +1,5 @@
 <?php
 include("../config.php");
-include(constant("SITE_ROOT")."/header.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmar_apagar"])) {
 	$id_apagar = (int)$_POST["id_apagar"];
@@ -24,8 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmar_apagar"])) {
 		$erro = "Erro ao verificar vínculos: " . pg_last_error($dbObj->link_id);
 	}
 }
+
+include(constant("SITE_ROOT")."/header.php");
+
 ?>
-	
+
 <div class="admtitleback">
     <p class="admtitletext">Cadastro de Disciplina</p>
 </div>
