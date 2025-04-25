@@ -54,7 +54,7 @@ include(constant("SITE_ROOT")."/header.php");
 		<tr>
 			<td colspan="2" style="text-align: center; padding: 12px;">
 		            <input class="subbut but-ap" type="submit" name="submit" value="Confirmar" class="subbut but-ap">
-		            <a class="subbut but-ap" href="<?=SITE_URL;?>/dicionario">Cancelar</a>
+		            <a class="subbut but" href="<?=SITE_URL;?>/dicionario">Cancelar</a>
 		        </td>
 	    	</tr>
 	</table>
