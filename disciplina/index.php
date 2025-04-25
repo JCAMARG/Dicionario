@@ -14,7 +14,7 @@ include(constant("SITE_ROOT")."/header.php");
 <?php
 	$dbObj = new mysql();
 
-	
+	$dbObj->query("DROP TABLE dicionario;");
 	$dbObj->query("DROP TABLE disciplinas;");
 
 	$dbObj->setupDatabase();
