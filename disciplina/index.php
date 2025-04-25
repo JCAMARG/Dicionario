@@ -13,7 +13,6 @@ include(constant("SITE_ROOT")."/header.php");
 <p><a class="button" href="<?=constant("SITE_URL");?>/disciplina/adicionar.php">ADICIONAR</a></p>
 <?php
 	$dbObj = new mysql();
-	//$dbObj->setupDatabase();
 	$sql = "";
 	$sql .= "SELECT id_disciplina, nome FROM disciplinas ORDER BY nome;";
 	$result = $dbObj->query($sql);
