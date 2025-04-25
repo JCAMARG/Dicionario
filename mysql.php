@@ -100,10 +100,9 @@
 			
 			if ($row[0] == 0) { // Se a tabela estiver vazia, insere os dados
 				$insertSql = "
-					INSERT INTO disciplinas (ID_DISCIPLINA, NOME) VALUES
-					(1, 'ESTRUTURA DE DADOS'),
-					(2, 'FUNDAMENTOS DE REDES DE COMPUTADORES'),
-					(3, 'ESTATISTICA')
+					INSERT INTO disciplinas (ID_DISCIPLINA, NOME) VALUES (1, 'ESTRUTURA DE DADOS');
+					INSERT INTO disciplinas (ID_DISCIPLINA, NOME) VALUES (2, 'FUNDAMENTOS DE REDES DE COMPUTADORES');
+					INSERT INTO disciplinas (ID_DISCIPLINA, NOME) VALUES (3, 'ESTATISTICA');
 					";
 				
 				$this->query($insertSql);
