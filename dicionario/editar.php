@@ -3,6 +3,7 @@
 include("../config.php");
 
 $id = $_GET["id"]?$_GET["id"]:$_POST["id"];
+$id_disciplna = $_GET["id_disciplna"]?$_GET["id_disciplna"]:$_POST["id_disciplna"];
 
 if ($id>0){
 	$dbObj = new mysql();
@@ -24,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	extract($_POST);
 	$erro = "";
 	if (!$significado) {
-		$erro .= " Dignificado não pode ser vazio. ";
+		$erro .= " Significado não pode ser vazio. ";
 	}
 	if (!$palavra) {
 		$erro .= " Palavra não pode ser vazio. ";
@@ -66,7 +67,6 @@ if (isset($erro)) {
 }
 ?>
 
-
 <br><br>
 
 <?php
@@ -74,15 +74,17 @@ if (isset($erro)) {
 	$sql = "";
 	$sql .= "SELECT * FROM disciplinas ";
 	$sql .= " ORDER BY nome;";
-	$result = $dbObj->query($sql);
+	$resultDis = $dbObj->query($sql);
 ?>
  
 <form method="POST">
 	<input type="hidden" name="id" value="<?=isset($id)?$id:"";?>">
+	<input type="hidden" name="id_disciplina" value="<?=isset($id_disciplina)?$id_disciplina:"";?>">
+	
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
 			<td>Palavra:</td>
-			<td><input type="text" name="palavra" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($palav_orig)?$palav_orig:"";?>"></td>
+			<td><input type="text" name="palavra" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($palavra)?$palavra:"";?>"></td>
 		</tr>
 
 		<tr>
@@ -94,13 +96,14 @@ if (isset($erro)) {
 			<td>Disciplinas:</td>
 			<td>
 				<select style="width:179px; padding:3px" name="id_disciplina">
-                    <?php
-					echo "<option></option>";
-                        while ($row = pg_fetch_assoc($result)) {
-                            echo "<option value='".$row['id']."'>".$row['nome']."</option>";
-                        }
-                    ?>
-                </select>
+		                    <?php
+							echo "<option></option>";
+		                        while ($row = pg_fetch_assoc($resultDis)) {
+		                            $selected = ($row['id'] == $id_disciplina) ? "selected" : "";
+					    echo "<option value='".$row['id']."' $selected>".$row['nome']."</option>";
+		                        }
+		                    ?>
+		                </select>
 			</td>
 		</tr>
 		<tr>
