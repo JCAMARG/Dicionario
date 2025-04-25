@@ -67,18 +67,18 @@ if (isset($erro)) {
 ?> 
  
 <form method="POST">
-	<table>
+	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
 			<td>Palavra:</td>
-			<td><input type="text" name="palavra" value="<?=isset($palavra)?$palavra:"";?>"></td>
+			<td style="width: 100%;"><input type="text" name="palavra" value="<?=isset($palavra)?$palavra:"";?>"></td>
 		</tr>
 		<tr>
 			<td>Significado:</td>
-			<td><input type="text" name="significado" value="<?=isset($significado)?$significado:"";?>"></td>
+			<td style="width: 100%;"><input type="text" name="significado" value="<?=isset($significado)?$significado:"";?>"></td>
 		</tr>
 		<tr>
 			<td>Disciplina:</td>
-			<td>
+			<td style="width: 100%;">
 				<select style="width:179px" name="disciplina">
                     <?php
 					echo "<option></option>";
