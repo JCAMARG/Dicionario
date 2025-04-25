@@ -7,6 +7,8 @@ $acao = $_GET['acao'] ?? '';
 
 switch ($acao) {
     case 'criar_disciplinas':
+        $db->dropTable('dicionario');
+        $db->createDicionarioTable();
         $db->dropTable('disciplinas');
         $db->createDisciplinaTable();
         echo "Tabela 'disciplinas' recriada com sucesso!";
