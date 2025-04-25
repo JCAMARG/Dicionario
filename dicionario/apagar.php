@@ -49,7 +49,7 @@ include(constant("SITE_ROOT")."/header.php");
 	<input type="hidden" name="id" value="<?=isset($id)?$id:"";?>">
 	<table>
 		<tr>
-			<td colspan="2" class="htext" style="background-color:navy">Você tem certeza que quer apagar o produto "<?=isset($palavra_orig)?$palavra_orig:"";?>"?</td>
+			<td colspan="2" class="htext" style="background-color:navy; color:white;">Você tem certeza que quer apagar o produto "<?=isset($palavra_orig)?$palavra_orig:"";?>"?</td>
 		<tr>
 		<tr>
 			<td>
