@@ -39,6 +39,19 @@ include(constant("SITE_ROOT")."/header.php");
 	} else {
 	    echo "<p>Erro ao contar registros: " . pg_last_error($dbObj->link_id) . "</p>";
 	}
+
+	$dbObj = new mysql();
+	$sql = "SELECT ID_DISCIPLINA, NOME FROM disciplinas ORDER BY NOME";
+	$result = $dbObj->query($sql);
+	
+	if (!$result) {
+	    echo "<p>Erro na consulta: " . pg_last_error($dbObj->link_id) . "</p>";
+	} else {
+	    while ($row = pg_fetch_assoc($result)) {
+	        echo "<p>" . $row['ID_DISCIPLINA'] . " - " . $row['NOME'] . "</p>";
+	    }
+	}
+
 ?>
 
 <table class="lista">
