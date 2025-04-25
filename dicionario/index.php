@@ -19,7 +19,7 @@ include(constant("SITE_ROOT")."/header.php");
 	$dbObj->setupDatabase();
 	
 	$sql = "";
-	$sql .= "SELECT * FROM dicionario ORDER BY PALAVRA_ORIG;";
+	$sql .= "SELECT * FROM dicionario ORDER BY palavra_orig;";
 	$result = $dbObj->query($sql);
 ?>
 
@@ -33,7 +33,7 @@ include(constant("SITE_ROOT")."/header.php");
 		while ($row = pg_fetch_assoc ($result)) {
 			echo "<tr class='linhalista'>";
 				echo "<td class='linhalista'>";
-					echo $row["PALAVRA_ORIG"];
+					echo $row["palavra_orig"];
 				echo "</td>";
 				echo "<td>";
 					echo "<a class='subbut' href='".constant("SITE_URL")."/dicionario/apagar.php?id=".$row["ID"]."'>APAGAR</a>";
