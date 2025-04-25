@@ -69,6 +69,10 @@ if (isset($erro)) {
 			<td><input type="text" name="palavra" value="<?=isset($palavra)?$palavra:"";?>"></td>
 		</tr>
 		<tr>
+			<td>Significado:</td>
+			<td><input type="text" name="nome" value="<?=isset($palavra)?$palavra:"";?>"></td>
+		</tr>
+		<tr>
 			<td>Disciplina:</td>
 			<td>
 				<select style="width:179px" name="disciplina">
