@@ -43,13 +43,14 @@
 		        if (!$result) {
 		            die("Erro na consulta: " . pg_last_error());
 		        }
-		        return $result;
+		        $this->result = $result;
+			return $this->result;
 		}
 
 		// Método para contar as linhas afetadas
 		function affectedRows() {
 			//return mysqli_affected_rows ($this->link_id);
-			return pg_affected_rows($this->link_id);
+			return pg_affected_rows($this->result);
 		}
 
 		// Método para fechar a conexão com o banco de dados
