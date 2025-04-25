@@ -52,7 +52,7 @@ include(constant("SITE_ROOT")."/header.php");
  
 <?php
 if (isset($erro)) {
-	echo "<span style=\"color: white; font-style: italic;\">";
+	echo "<span style=\"color: white; font-style: italic; padding: 5;\">";
 	echo $erro;
 	echo "</span>";
 	?>
@@ -65,7 +65,7 @@ if (isset($erro)) {
 	<input type="hidden" name="id" value="<?=isset($id)?$id:"";?>">
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
-			<td>Nome:</td>
+			<td style="width: 1%";>Nome:</td>
 			<td><input type="text" name="nome" style="padding: 3px; border:1px solid grey; border-style:inset; width: 100%;" value="<?=isset($nome)?$nome:"";?>"></td>
 		</tr>
 		<tr>
