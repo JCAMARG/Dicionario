@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!$palavra) {
 		$erro .= " Palavra não pode ser vazio. ";
 	}
-	if (!$disciplina) {
+	if (!$id_disciplina) {
 		$erro .= " Disciplina não pode ser vazio. ";
 	}	
 	if (!$erro) {
@@ -63,6 +63,7 @@ if (isset($erro)) {
 	echo "<span style=\"color: white; font-style: italic;\">";
 	echo $erro;
 	echo "</span>";
+	<br><br>
 }
 ?>
 
