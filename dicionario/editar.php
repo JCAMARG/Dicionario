@@ -64,10 +64,11 @@ if (isset($erro)) {
 	echo "<span style=\"color: white; font-style: italic;\">";
 	echo $erro;
 	echo "</span>";
+	?>
+	<br><br>
+	<?php
 }
 ?>
-
-<br><br>
 
 <?php
 	$dbObj = new mysql();
@@ -99,7 +100,7 @@ if (isset($erro)) {
 							echo "<option></option>";
 		                        while ($row = pg_fetch_assoc($resultDis)) {
 		                            $selected = ($row['id_disciplina'] == $id_disciplina) ? "selected" : "";
-					    echo "<option value='".$row['id']."' $selected>".$row['nome']."</option>";
+					    echo "<option value='".$row['id_disciplina']."' $selected>".$row['nome']."</option>";
 		                        }
 		                    ?>
 		                </select>
