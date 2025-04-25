@@ -12,7 +12,7 @@ if ($id>0){
 		header("Location: ".SITE_URL."/disciplina");
 		exit;
 	}
-	$row = mysqli_fetch_assoc($result);
+	$row = pg_fetch_assoc($result);
 	extract($row);
 } else {
 		header ("Location: ".SITE_URL."/disciplina");
