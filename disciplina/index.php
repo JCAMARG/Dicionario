@@ -15,7 +15,7 @@ include(constant("SITE_ROOT")."/header.php");
 	$dbObj = new mysql();
 	//$dbObj->setupDatabase();
 	$sql = "";
-	$sql .= "SELECT ID_DISCIPLINA, NOME FROM disciplinas ORDER BY NOME;";
+	$sql .= "SELECT id_disciplina,  FROM disciplinas ORDER BY nome;";
 	$result = $dbObj->query($sql);
 
 	if (!$result) {
@@ -41,14 +41,14 @@ include(constant("SITE_ROOT")."/header.php");
 	}
 
 	$dbObj = new mysql();
-	$sql = "SELECT ID_DISCIPLINA, NOME FROM disciplinas ORDER BY NOME";
+	$sql = "SELECT id_disciplina, nome FROM disciplinas ORDER BY nome";
 	$result = $dbObj->query($sql);
 	
 	if (!$result) {
 	    echo "<p>Erro na consulta: " . pg_last_error($dbObj->link_id) . "</p>";
 	} else {
 	    while ($row = pg_fetch_assoc($result)) {
-	        echo "<p>" . $row['ID_DISCIPLINA'] . " - " . $row['NOME'] . "</p>";
+	        echo "<p>" . $row['id_disciplina'] . " - " . $row['nome'] . "</p>";
 	    }
 	}
 
@@ -56,7 +56,7 @@ include(constant("SITE_ROOT")."/header.php");
 
 <table class="lista">
 	<tr>
-		<th>NOME</th>
+		<th>nome</th>
 		<th>APAGAR</th>
 		<th>EDITAR</th>
 	</tr>
@@ -64,13 +64,13 @@ include(constant("SITE_ROOT")."/header.php");
 		while ($row = pg_fetch_assoc ($result)) {
 			echo "<tr class='linhalista'>";
 				echo "<td class='linhalista'>";
-					echo $row["NOME"];
+					echo $row["nome"];
 				echo "</td>";
 				echo "<td>";
-					echo "<a class='subbut' href='".constant("SITE_URL")."/disciplina/apagar.php?id=".$row["ID_DISCIPLINA"]."'>APAGAR</a>";
+					echo "<a class='subbut' href='".constant("SITE_URL")."/disciplina/apagar.php?id=".$row["id_disciplina"]."'>APAGAR</a>";
 				echo "</td>";
 				echo "<td>";
-					echo "<a class='subbut' href='".constant("SITE_URL")."/disciplina/editar.php?id=".$row["ID_DISCIPLINA"]."'>EDITAR</a>";
+					echo "<a class='subbut' href='".constant("SITE_URL")."/disciplina/editar.php?id=".$row["id_disciplina"]."'>EDITAR</a>";
 				echo "</td>";
 			echo "</tr>";
 		}
