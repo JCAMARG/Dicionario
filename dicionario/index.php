@@ -36,6 +36,7 @@ include(constant("SITE_ROOT")."/header.php");
 <table class="lista">
 	<tr>
 		<th>PALAVRA</th>
+		<th>SIGNIFICADO</th>
 		<th>APAGAR</th>
 		<th>EDITAR</th>
 	</tr>
