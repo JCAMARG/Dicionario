@@ -2,7 +2,13 @@
 include("../config.php");
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	extract($_POST);
+	//extract($_POST);
+
+	$nome = $_POST['nome'] ?? '';
+	$palavra = $_POST['palavra'] ?? '';
+	$disciplina = $_POST['disciplina'] ?? '';
+	$erro = "";
+	
 	$erro = "";
 	if (!$nome) {
 		$erro .= " nome não pode ser vazio. ";
