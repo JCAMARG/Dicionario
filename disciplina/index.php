@@ -2,12 +2,12 @@
 include("../config.php");
 include(constant("SITE_ROOT")."/header.php");
 
-$erro = "";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmar_apagar"])) {
 	$id_apagar = (int)$_POST["id_apagar"];
+	$erro = "";
 	
 	// Verifica se existem palavras vinculadas
+	$dbObj = new mysql();
 	$checkSql = "SELECT COUNT(*) FROM dicionario WHERE id_disciplina = $id_apagar";
 	$checkResult = $dbObj->query($checkSql);
 	
