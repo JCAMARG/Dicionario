@@ -15,7 +15,7 @@ include(constant("SITE_ROOT")."/header.php");
 	$dbObj = new mysql();
 	//$dbObj->setupDatabase();
 	$sql = "";
-	$sql .= "SELECT id_disciplina,  FROM disciplinas ORDER BY nome;";
+	$sql .= "SELECT id_disciplina, nome FROM disciplinas ORDER BY nome;";
 	$result = $dbObj->query($sql);
 
 	if (!$result) {
