@@ -68,7 +68,7 @@ if (isset($erro)) {
 <?php
 	$dbObj = new mysql();
 	$sql = "";
-	$sql .= "SELECT * FROM cat ";
+	$sql .= "SELECT * FROM disciplinas ";
 	$sql .= " ORDER BY nome;";
 	$result = $dbObj->query($sql);
 ?>
@@ -78,16 +78,13 @@ if (isset($erro)) {
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
 			<td>Nome:</td>
-			<td><input type="text" name="nome" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($nome)?$nome:"";?>"></td>
+			<td><input type="text" name="nome" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($palav_orig)?$palav_orig:"";?>"></td>
 		</tr>
+		
 		<tr>
-			<td>Preço:</td>
-			<td><input type="text" name="preco" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($preco)?$preco:"";?>"></td>
-		</tr>
-		<tr>
-			<td>Categoria:</td>
+			<td>Disciplinas:</td>
 			<td>
-				<select style="width:179px; padding:3px" name="cat">
+				<select style="width:179px; padding:3px" name="id_disciplina">
                     <?php
 					echo "<option></option>";
                         while ($row = pg_fetch_assoc($result)) {
