@@ -7,7 +7,7 @@ $id = $_GET["id"]?$_GET["id"]:$_POST["id"];
 if ($id>0){
 	$dbObj = new mysql();
 	$sql = "";
-	$sql .= "SELECT * FROM prod WHERE id = ".$id.";";
+	$sql .= "SELECT * FROM dicionario WHERE id = ".$id.";";
 	$result = $dbObj->query($sql);
 	if ($dbObj->affectedRows()== 0) {
 		header("Location: ".SITE_URL."/dicionario");
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 	$dbObj = new mysql();
 	$sql = "";
-	$sql .= " DELETE FROM prod ";
+	$sql .= " DELETE FROM dicionario ";
 	$sql .= " WHERE id = '".$id."'; ";
 	$result = $dbObj->query($sql);
 	header("Location: ".SITE_URL."/dicionario");
