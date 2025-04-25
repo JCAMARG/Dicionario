@@ -51,8 +51,10 @@ switch ($acao) {
         break;
 
     default:
-        echo "Ação inválida.";
-        break;
+        header("Location: index.php");
+        exit;
+        //echo "Ação inválida.";
+        //break;        
 }
 ?>
 <br><a href="index.php">Voltar para a Home</a>
