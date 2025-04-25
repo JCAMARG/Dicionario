@@ -32,8 +32,8 @@ include(constant("SITE_ROOT")."/header.php");
 <table class="lista">
 	<tr>
 		<th>NOME</th>
-		<th style="background-color: #f7acac;">APAGAR</th>
 		<th style="background-color: #9ab4ff;">EDITAR</th>
+		<th style="background-color: #f7acac;">APAGAR</th>
 	</tr>
 	<?php
 		while ($row = pg_fetch_assoc ($result)) {
@@ -41,11 +41,11 @@ include(constant("SITE_ROOT")."/header.php");
 				echo "<td class='linhalista'>";
 					echo $row["nome"];
 				echo "</td>";
-				echo "<td>";
-					echo "<a class='subbut-ap' href='".constant("SITE_URL")."/disciplina/apagar.php?id=".$row["id_disciplina"]."'>APAGAR</a>";
+				echo "<td style="background-color: #9ab4ff;>";
+					echo "<a class='subbut but-ed' href='".constant("SITE_URL")."/disciplina/editar.php?id=".$row["id_disciplina"]."'>EDITAR</a>";
 				echo "</td>";
-				echo "<td>";
-					echo "<a class='subbut-ed' href='".constant("SITE_URL")."/disciplina/editar.php?id=".$row["id_disciplina"]."'>EDITAR</a>";
+				echo "<td style="background-color: #f7acac;">";
+					echo "<a class='subbut but-ap' href='".constant("SITE_URL")."/disciplina/apagar.php?id=".$row["id_disciplina"]."'>APAGAR</a>";
 				echo "</td>";
 			echo "</tr>";
 		}
