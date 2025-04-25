@@ -4,14 +4,14 @@ include("../config.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	//extract($_POST);
 
-	$nome = $_POST['nome'] ?? '';
+	$significado = $_POST['significado'] ?? '';
 	$palavra = $_POST['palavra'] ?? '';
 	$disciplina = $_POST['disciplina'] ?? '';
 	$erro = "";
 	
 	$erro = "";
-	if (!$nome) {
-		$erro .= " nome não pode ser vazio. ";
+	if (!$significado) {
+		$erro .= " Significado não pode ser vazio. ";
 	}
 	if (!$palavra) {
 		$erro .= " Palavra não pode ser vazio. ";
@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$dbObj = new mysql();
 		$sql = "";
 		$sql .= " INSERT INTO dicionario ";
-		$sql .= " (palavra_orig, id_disciplina) ";
+		$sql .= " (palavra_orig, significado, id_disciplina) ";
 		$sql .= " VALUES ";
-		$sql .= " ('".$palavra."', '".$disciplina."')";
+		$sql .= " ('".$palavra."', '".$significado."', '".$disciplina."')";
 		$result = $dbObj->query($sql);
 		header("Location: ".SITE_URL."/dicionario");
 		exit;
@@ -74,7 +74,7 @@ if (isset($erro)) {
 		</tr>
 		<tr>
 			<td>Significado:</td>
-			<td><input type="text" name="nome" value="<?=isset($palavra)?$palavra:"";?>"></td>
+			<td><input type="text" name="significado" value="<?=isset($significado)?$significado:"";?>"></td>
 		</tr>
 		<tr>
 			<td>Disciplina:</td>
