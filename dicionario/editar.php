@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!$significado) {
 		$erro .= " Significado não pode ser vazio. ";
 	}
-	if (!$palavra) {
+	if (!$palavra_orig) {
 		$erro .= " Palavra não pode ser vazio. ";
 	}
 	if (!$id_disciplina) {
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$dbObj = new mysql();
 		$sql = "";
 		$sql .= " UPDATE dicionario SET ";
-		$sql .= " palavra_orig = '".$palavra."', ";
+		$sql .= " palavra_orig = '".$palavra_orig."', ";
 		$sql .= " significado = '".$significado."', ";
 		$sql .= " id_disciplina = '".$id_disciplina."' ";
 		$sql .= " WHERE ID = '".$id."'; ";
