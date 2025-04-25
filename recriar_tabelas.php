@@ -1,6 +1,6 @@
 <?php
 include("./config.php");
-include(constant("SITE_ROOT")."/funcoes.php"); // ou onde está sua classe mysql
+include(constant("SITE_ROOT")."/mysql.php"); // ou onde está sua classe mysql
 
 $db = new mysql();
 
