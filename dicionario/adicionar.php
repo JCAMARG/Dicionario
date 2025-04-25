@@ -45,9 +45,10 @@ include(constant("SITE_ROOT")."/header.php");
  
 <?php
 if (isset($erro)) {
-	echo "<span style=\"color: red; font-style: italic;\">";
+	echo "<span style=\"color: white; font-style: italic;\">";
 	echo $erro;
 	echo "</span>";
+	<br><br>
 }
 ?>
  
