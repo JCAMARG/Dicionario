@@ -48,7 +48,7 @@ if (isset($erro)) {
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
 			<td>Nome:</td>
-			<td style="width: 100%;"><input type="text" name="nome" value="<?=isset($nome)?$nome:"";?>"></td>
+			<td><input type="text" name="nome" value="<?=isset($nome)?$nome:"";?>" style="width: 100%;"></td>
 		</tr>
 		<tr>
 			<td>
