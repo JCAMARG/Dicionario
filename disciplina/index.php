@@ -32,7 +32,7 @@ include(constant("SITE_ROOT")."/header.php");
 
 <table class="lista">
 	<tr>
-		<th>nome</th>
+		<th>NOME</th>
 		<th>APAGAR</th>
 		<th>EDITAR</th>
 	</tr>
