@@ -64,7 +64,7 @@ if (isset($erro)) {
 				<select style="width:179px" name="disciplina">
                     <?php
 					echo "<option></option>";
-                        while ($row = mysqli_fetch_assoc($result)) {
+                        while ($row = pg_fetch_assoc($result)) {
                             echo "<option value='".$row['ID_DISCIPLINA']."'>".$row['NOME']."</option>";
                         }
                     ?>
