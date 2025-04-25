@@ -47,7 +47,7 @@ if (isset($erro)) {
 <?php
 	$dbObj = new mysql();
 	$sql = "";
-	$sql .= "SELECT * FROM disciplinas ";
+	$sql .= "SELECT ID_DISCIPLINA, NOME FROM disciplinas ";
 	$sql .= " ORDER BY NOME;";
 	$result = $dbObj->query($sql);
 ?> 
