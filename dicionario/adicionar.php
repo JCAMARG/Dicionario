@@ -79,18 +79,17 @@ if (isset($erro)) {
 		<tr>
 			<td style="width: 1%;">Disciplina:</td>
 			<td>
-				<select style="width:179px" name="disciplina" style="width: 100%;">
-                    <?php
-					echo "<option></option>";
-                        while ($row = pg_fetch_assoc($result)) {
-                            echo "<option value='".$row['id_disciplina']."'>".$row['nome']."</option>";
-                        }
-                    ?>
-                </select>
+				<select style="width:179px; width: 100%;" name="disciplina">
+		                    <?php
+		                        while ($row = pg_fetch_assoc($result)) {
+		                            echo "<option value='".$row['id_disciplina']."'>".$row['nome']."</option>";
+		                        }
+		                    ?>
+               			</select>
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td style="width: 1%;>
 				&nbsp;
 			</td>
 			<td>
