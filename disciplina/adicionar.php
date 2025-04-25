@@ -35,7 +35,7 @@ include(constant("SITE_ROOT")."/header.php");
  
 <?php
 if (isset($erro)) {
-	echo "<span style=\"color: white; font-style: italic;\">";
+	echo "<span style=\"color: white; font-style: italic; padding:5;\">";
 	echo $erro;
 	echo "</span>";
 	?>
@@ -47,7 +47,7 @@ if (isset($erro)) {
 <form method="POST">
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
-			<td>Nome:</td>
+			<td style="width: 1%;">Nome:</td>
 			<td><input type="text" name="nome" value="<?=isset($nome)?$nome:"";?>" style="width: 100%;"></td>
 		</tr>
 		<tr>
