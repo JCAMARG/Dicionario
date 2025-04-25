@@ -81,6 +81,7 @@ if (isset($erro)) {
 			<td>
 				<select style="width:179px; width: 100%;" name="disciplina">
 		                    <?php
+					echo "<option></option>";
 		                        while ($row = pg_fetch_assoc($result)) {
 		                            echo "<option value='".$row['id_disciplina']."'>".$row['nome']."</option>";
 		                        }
