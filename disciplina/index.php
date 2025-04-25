@@ -18,6 +18,10 @@ include(constant("SITE_ROOT")."/header.php");
 	$sql = "";
 	$sql .= "SELECT ID_DISCIPLINA, NOME FROM disciplinas ORDER BY NOME;";
 	$result = $dbObj->query($sql);
+
+	if (!$result) {
+    	echo "<p style='color: red;'>Erro na consulta: " . pg_last_error($dbObj->link_id) . "</p>";
+}
 ?>
 
 <table class="lista">
