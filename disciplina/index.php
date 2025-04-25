@@ -3,7 +3,7 @@ include("../config.php");
 include(constant("SITE_ROOT")."/header.php");
 ?>
 <div class="admtitleback">
-    <p class="admtitleback">PROJETO - Cadastro de Disciplina</p>
+    <p class="admtitletext">Cadastro de Disciplina</p>
 </div>
 
 <?php
