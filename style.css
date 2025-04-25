@@ -113,6 +113,8 @@ th {
 	border:1px solid slategrey;
 	border-style:outset;
 	padding: 6px 10px; 
+	text-align: center;
+	text-decoration: none;
 	color: white; 
 	border: none; 
 	border-radius: 5px; 
@@ -120,15 +122,16 @@ th {
 }
 
 .but-confirma:hover{
-	background-color: ##7dbcff; 
+	background-color: #7dbcff; 
 	border:1px solid lightslategrey;
 	border-style:inset;
 	padding: 6px 10px; 
+	text-align: center;
+	text-decoration: none;
 	color: darkblue; 
 	border: none; 
 	border-radius: 5px; 
 	cursor: pointer;
-	font-size: 80%;
 }
 
 .subbut{
