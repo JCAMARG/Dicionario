@@ -83,17 +83,17 @@ if (isset($erro)) {
 	
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
-			<td>Palavra:</td>
+			<td style="width: 1%;">Palavra:</td>
 			<td><input type="text" name="palavra_orig" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($palavra_orig)?$palavra_orig:"";?>" style="width: 100%;"></td>
 		</tr>
 
 		<tr>
-			<td>Significado:</td>
+			<td style="width: 1%;">Significado:</td>
 			<td><input type="text" name="significado" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($significado)?$significado:"";?>" style="width: 100%;"></td>
 		</tr>
 		
 		<tr>
-			<td>Disciplinas:</td>
+			<td style="width: 1%;">Disciplinas:</td>
 			<td>
 				<select style="width:179px; padding:3px" name="id_disciplina" style="width: 100%;">
 		                    <?php
