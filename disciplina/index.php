@@ -30,6 +30,16 @@ include(constant("SITE_ROOT")."/header.php");
 	if (pg_num_rows($result) === 0) {
 		echo "<tr><td colspan='3'>Nenhuma disciplina encontrada.</td></tr>";
 	}
+
+	$countSql = "SELECT COUNT(*) FROM disciplinas";
+	$countResult = $dbObj->query($countSql);
+	
+	if ($countResult) {
+	    $countRow = pg_fetch_row($countResult);
+	    echo "<p>Total de registros: " . $countRow[0] . "</p>";
+	} else {
+	    echo "<p>Erro ao contar registros: " . pg_last_error($dbObj->link_id) . "</p>";
+	}
 ?>
 
 <table class="lista">
