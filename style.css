@@ -2,6 +2,10 @@ p, a, td, th, input{
 	font-family: sans-serif;
 }
 
+th {
+    padding: 5px;
+}
+
 .admlogin{
 	background-color: ghostwhite;
 	text-align: center;
