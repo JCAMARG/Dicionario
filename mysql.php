@@ -199,20 +199,5 @@
 				$this->query($insertSql);
 			}
 		}
-		
-		// Recriar a tabela disciplinas (com os dados iniciais)
-		function resetDisciplinaTable() {
-			// Apaga dicionario primeiro por causa da foreign key
-			$this->query("DROP TABLE IF EXISTS dicionario");
-			$this->query("DROP TABLE IF EXISTS disciplinas");
-			$this->createDisciplinaTable();
-			$this->insertDisciplinaData();
-		}
-		
-		// Recriar somente a tabela dicionario
-		function resetDicionarioTable() {
-			$this->query("DROP TABLE IF EXISTS dicionario");
-			$this->createDicionarioTable();
-		}
 	}
 ?>
