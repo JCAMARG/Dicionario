@@ -23,8 +23,8 @@ if ($id>0){
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	extract($_POST);
 	$erro = "";
-	if (!$nome) {
-		$erro .= " Nome não pode ser vazio. ";
+	if (!$significado) {
+		$erro .= " Dignificado não pode ser vazio. ";
 	}
 	if (!$palavra) {
 		$erro .= " Palavra não pode ser vazio. ";
@@ -35,10 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!$erro) {
 		$dbObj = new mysql();
 		$sql = "";
-		$sql .= " INSERT INTO dicionario ";
-		$sql .= " (nome, preco, cat) ";
-		$sql .= " VALUES ";
-		$sql .= " ('".$nome."', '".$preco."', '".$cat."')";
+		$sql .= " UPDATE dicionario SET ";
+		$sql .= " palavra = '".$palavra."', ";
+		$sql .= " significado = '".$significado."', ";
+		$sql .= " id_disiplina = '".$id_disciplina."' ";
+		$sql .= " WHERE ID = '".$id."'; ";
 		$result = $dbObj->query($sql);
 		header("Location: ".SITE_URL."/dicionario");
 		exit;
@@ -49,8 +50,8 @@ include(constant("SITE_ROOT")."/header.php");
  
 ?>
  
- <div class="hback">
-    <p class="htext">EDITAR PALAVRA</p>
+ <div class="admtitleback">
+    <p class="admtitletext">EDITAR PALAVRA</p>
 </div>
  
 <?php include(constant("SITE_ROOT")."/menu.php"); ?>
@@ -59,7 +60,7 @@ include(constant("SITE_ROOT")."/header.php");
  
 <?php
 if (isset($erro)) {
-	echo "<span style=\"color: red; font-style: italic;\">";
+	echo "<span style=\"color: white; font-style: italic;\">";
 	echo $erro;
 	echo "</span>";
 }
@@ -77,8 +78,13 @@ if (isset($erro)) {
 	<input type="hidden" name="id" value="<?=isset($id)?$id:"";?>">
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
-			<td>Nome:</td>
-			<td><input type="text" name="nome" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($palav_orig)?$palav_orig:"";?>"></td>
+			<td>Palavra:</td>
+			<td><input type="text" name="palavra" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($palav_orig)?$palav_orig:"";?>"></td>
+		</tr>
+
+		<tr>
+			<td>Significado:</td>
+			<td><input type="text" name="significado" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($significado)?$significado:"";?>"></td>
 		</tr>
 		
 		<tr>
