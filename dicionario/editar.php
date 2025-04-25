@@ -3,7 +3,7 @@
 include("../config.php");
 
 $id = $_GET["id"]?$_GET["id"]:$_POST["id"];
-$id_disciplna = $_GET["id_disciplna"]?$_GET["id_disciplna"]:$_POST["id_disciplna"];
+$id_disciplina = $_GET["id_disciplina"]?$_GET["id_disciplina"]:$_POST["id_disciplina"];
 
 if ($id>0){
 	$dbObj = new mysql();
@@ -84,7 +84,7 @@ if (isset($erro)) {
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
 			<td>Palavra:</td>
-			<td><input type="text" name="palavra" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($palavra)?$palavra:"";?>"></td>
+			<td><input type="text" name="palavra_orig" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($palavra_orig)?$palavra_orig:"";?>"></td>
 		</tr>
 
 		<tr>
@@ -95,7 +95,7 @@ if (isset($erro)) {
 		<tr>
 			<td>Disciplinas:</td>
 			<td>
-				<select style="width:179px; padding:3px" name="id_disciplina">
+				<select style="width:179px; padding:3px" name="disciplina">
 		                    <?php
 							echo "<option></option>";
 		                        while ($row = pg_fetch_assoc($resultDis)) {
