@@ -31,7 +31,7 @@ include(constant("SITE_ROOT")."/header.php");
 
 <table class="lista">
 	<tr>
-		<th>NOME</th>
+		<th style="background-color: #9ab4ff;">NOME</th>
 		<th style="background-color: #9ab4ff;">EDITAR</th>
 		<th style="background-color: #f7acac;">APAGAR</th>
 	</tr>
