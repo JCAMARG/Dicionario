@@ -15,7 +15,7 @@ include(constant("SITE_ROOT")."/header.php");
                 <option value="ins_dici">Carregar dados Dicionário</option>
                 <option value="restaurar">Restaurar banco completo</option>
             </select>
-            <button type="submit" style="padding: 6px 10px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Recriar</button>
+            <button type="submit" style="padding: 6px 10px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Processar</button>
         </form>
     </div>
 </div>
