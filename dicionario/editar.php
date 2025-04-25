@@ -97,7 +97,7 @@ if (isset($erro)) {
 			<td>
 				<select style="width:179px; padding:3px; width: 100%;" name="id_disciplina">
 		                    <?php
-							echo "<option></option>";
+					echo "<option></option>";
 		                        while ($row = pg_fetch_assoc($resultDis)) {
 		                            $selected = ($row['id_disciplina'] == $id_disciplina) ? "selected" : "";
 					    echo "<option value='".$row['id_disciplina']."' $selected>".$row['nome']."</option>";
