@@ -63,9 +63,11 @@ if (isset($erro)) {
 	echo "<span style=\"color: white; font-style: italic;\">";
 	echo $erro;
 	echo "</span>";
-	<br><br>
 }
 ?>
+
+
+<br><br>
 
 <?php
 	$dbObj = new mysql();
