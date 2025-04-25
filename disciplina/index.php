@@ -1,13 +1,50 @@
 <?php
 include("../config.php");
 include(constant("SITE_ROOT")."/header.php");
+
+$erro = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmar_apagar"])) {
+	$id_apagar = (int)$_POST["id_apagar"];
+	
+	// Verifica se existem palavras vinculadas
+	$checkSql = "SELECT COUNT(*) FROM dicionario WHERE id_disciplina = $id_apagar";
+	$checkResult = $dbObj->query($checkSql);
+	
+	if ($checkResult) {
+		$checkRow = pg_fetch_row($checkResult);
+		if ($checkRow[0] > 0) {
+			$erro = "Não é possível apagar a disciplina. Existem palavras vinculadas a ela.";
+		} else {
+			// Redireciona para apagar.php se não houver vínculos
+			header("Location: " . constant("SITE_URL") . "/disciplina/apagar.php?id=$id_apagar");
+			exit;
+		}
+	} else {
+		$erro = "Erro ao verificar vínculos: " . pg_last_error($dbObj->link_id);
+	}
+}
 ?>
+	
 <div class="admtitleback">
     <p class="admtitletext">Cadastro de Disciplina</p>
 </div>
 
 <?php
     include (constant("SITE_ROOT")."/menu.php");
+?>
+
+<br><br>
+ 
+<?php
+if (isset($erro)) {
+	echo "<span style=\"color: white; font-style: italic; padding: 5;\">";
+	echo $erro;
+	echo "</span>";
+	?>
+	<br><br>
+	<?php
+}
 ?>
 
 <p><a class="button" href="<?=constant("SITE_URL");?>/disciplina/adicionar.php">ADICIONAR</a></p>
@@ -45,7 +82,11 @@ include(constant("SITE_ROOT")."/header.php");
 					echo "<a class='subbut but-ed' href='".constant("SITE_URL")."/disciplina/editar.php?id=".$row["id_disciplina"]."'>EDITAR</a>";
 				echo "</td>";
 				echo "<td style='background-color: #f7acac;'>";
-					echo "<a class='subbut but-ap' href='".constant("SITE_URL")."/disciplina/apagar.php?id=".$row["id_disciplina"]."'>APAGAR</a>";
+					//echo "<a class='subbut but-ap' href='".constant("SITE_URL")."/disciplina/apagar.php?id=".$row["id_disciplina"]."'>APAGAR</a>";
+					echo "<form method='post' style='display:inline'>";
+						echo "<input type='hidden' name='id_apagar' value='" . $row['id_disciplina'] . "'>";
+						echo "<input type='submit' name='confirmar_apagar' value='APAGAR' class='subbut but-ap'>";
+					echo "</form>";
 				echo "</td>";
 			echo "</tr>";
 		}
