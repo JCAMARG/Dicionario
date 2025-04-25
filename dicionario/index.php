@@ -14,9 +14,6 @@ include(constant("SITE_ROOT")."/header.php");
 <p><a class="button" href="<?=constant("SITE_URL");?>/dicionario/adicionar.php">ADICIONAR</a></p>
 <?php
 	$dbObj = new mysql();
-
-	// Chamar a função para verificar e criar a tabela, se necessário
-	$dbObj->setupDatabase();
 	
 	$sql = "";
 	$sql .= "SELECT * FROM dicionario ";
