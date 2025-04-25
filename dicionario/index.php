@@ -20,6 +20,8 @@ include(constant("SITE_ROOT")."/header.php");
 	
 	$sql = "";
 	$sql .= "SELECT * FROM dicionario ORDER BY palavra_orig;";
+	$sql .= "INNER JOIN disciplinas ON dicionario.id_disciplina = disciplinas.id_disciplina";
+	$sql .= "ORDER BY palavra_orig;";
 	$result = $dbObj->query($sql);
 
 	$countSql = "SELECT COUNT(*) FROM dicionario";
@@ -37,6 +39,7 @@ include(constant("SITE_ROOT")."/header.php");
 	<tr>
 		<th>PALAVRA</th>
 		<th>SIGNIFICADO</th>
+		<th>DISCIPLINA</th>
 		<th>APAGAR</th>
 		<th>EDITAR</th>
 	</tr>
@@ -48,6 +51,9 @@ include(constant("SITE_ROOT")."/header.php");
 				echo "</td>";
 				echo "<td class='linhalista'>";
 					echo $row["significado"];
+				echo "</td>";
+				echo "<td class='linhalista'>";
+					echo $row["nome"];
 				echo "</td>";
 				echo "<td>";
 					echo "<a class='subbut' href='".constant("SITE_URL")."/dicionario/apagar.php?id=".$row["id"]."'>APAGAR</a>";
