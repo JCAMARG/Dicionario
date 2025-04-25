@@ -4,9 +4,9 @@ include(constant("SITE_ROOT")."/header.php");
 ?>
 <div class="admtitleback" style="display: flex; justify-content: space-between; align-items: center;">
     <p class="admtitletext">HOME - PROJETO DICIONARIO</p>
-    <div>
+    <div class="admtitletext">
         <!-- Combo Box para recriar tabelas -->
-        <form action="recriar_tabelas.php" method="GET">
+        <form action="recriar_tabelas.php" method="GET"  style="margin: 0">
             <select name="acao" style="padding: 5px; font-size: 14px;">
                 <option value="">Selecione uma Tabela</option>
                 <option value="disciplinas">Recriar Tabela Disciplinas</option>
