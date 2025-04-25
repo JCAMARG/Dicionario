@@ -45,7 +45,7 @@ include(constant("SITE_ROOT")."/header.php");
  
 <?php
 if (isset($erro)) {
-	echo "<span style=\"color: white; font-style: italic;\">";
+	echo "<span style=\"color: white; font-style: italic; padding: 5\">";
 	echo $erro;
 	echo "</span>";
 	?>
@@ -89,7 +89,7 @@ if (isset($erro)) {
 			</td>
 		</tr>
 		<tr>
-			<td style="width: 1%;>
+			<td style="width: 1%;">
 				&nbsp;
 			</td>
 			<td>
