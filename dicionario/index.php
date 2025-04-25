@@ -19,8 +19,8 @@ include(constant("SITE_ROOT")."/header.php");
 	$dbObj->setupDatabase();
 	
 	$sql = "";
-	$sql .= "SELECT * FROM dicionario ORDER BY palavra_orig;";
-	$sql .= "INNER JOIN disciplinas ON dicionario.id_disciplina = disciplinas.id_disciplina";
+	$sql .= "SELECT * FROM dicionario ";
+	$sql .= "INNER JOIN disciplinas ON dicionario.id_disciplina = disciplinas.id_disciplina ";
 	$sql .= "ORDER BY palavra_orig;";
 	$result = $dbObj->query($sql);
 
