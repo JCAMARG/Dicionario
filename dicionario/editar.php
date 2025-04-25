@@ -37,9 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$dbObj = new mysql();
 		$sql = "";
 		$sql .= " UPDATE dicionario SET ";
-		$sql .= " palavra = '".$palavra."', ";
+		$sql .= " palavra_orig = '".$palavra."', ";
 		$sql .= " significado = '".$significado."', ";
-		$sql .= " id_disiplina = '".$id_disciplina."' ";
+		$sql .= " id_disciplina = '".$id_disciplina."' ";
 		$sql .= " WHERE ID = '".$id."'; ";
 		$result = $dbObj->query($sql);
 		header("Location: ".SITE_URL."/dicionario");
@@ -79,7 +79,6 @@ if (isset($erro)) {
  
 <form method="POST">
 	<input type="hidden" name="id" value="<?=isset($id)?$id:"";?>">
-	<input type="hidden" name="id_disciplina" value="<?=isset($id_disciplina)?$id_disciplina:"";?>">
 	
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
@@ -95,7 +94,7 @@ if (isset($erro)) {
 		<tr>
 			<td>Disciplinas:</td>
 			<td>
-				<select style="width:179px; padding:3px" name="disciplina">
+				<select style="width:179px; padding:3px" name="id_disciplina">
 		                    <?php
 							echo "<option></option>";
 		                        while ($row = pg_fetch_assoc($resultDis)) {
