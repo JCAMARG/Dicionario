@@ -103,10 +103,10 @@ th {
 	border:1px solid slategrey;
 	border-style:outset;
 	border-radius:6px;
-	padding: 2px 8px;
+	padding: 3px 8px;
 	text-align: center;
 	text-decoration: none;
-	font-size: 60%;
+	font-size: 75%;
 	display: inline-block;
 	color: white;
 }
@@ -128,7 +128,7 @@ th {
 	text-align: center;	
 	text-decoration: none;
 	display: inline-block;
-	font-size: 60%;
+	font-size: 70%;
 	color: black;
 }
 
