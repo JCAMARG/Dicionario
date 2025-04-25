@@ -31,19 +31,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmar_apagar"])) {
 </div>
 
 <?php
-    include (constant("SITE_ROOT")."/menu.php");
-?>
+include (constant("SITE_ROOT")."/menu.php");
 
-<br><br>
- 
-<?php
 if (isset($erro)) {
+	?><br><br><?php
+	
 	echo "<span style=\"color: white; font-style: italic; padding: 5;\">";
 	echo $erro;
 	echo "</span>";
-	?>
-	<br><br>
-	<?php
+	
+	?><br><?php
 }
 ?>
 
