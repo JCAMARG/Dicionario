@@ -35,8 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 include(constant("SITE_ROOT")."/header.php");
  
 ?>
- 
-<h1>PROJETO - Adicionar Palavra</h1>
+  <div class="hback">
+    <p class="htext">Adicionar Palavra</p>
+</div>
  
 <?php include(constant("SITE_ROOT")."/menu.php"); ?>
  
