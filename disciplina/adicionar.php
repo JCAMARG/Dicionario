@@ -45,10 +45,10 @@ if (isset($erro)) {
 ?>
 	
 <form method="POST">
-	<table>
+	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
 			<td>Nome:</td>
-			<td><input type="text" name="nome" value="<?=isset($nome)?$nome:"";?>"></td>
+			<td style="width: 100%;"><input type="text" name="nome" value="<?=isset($nome)?$nome:"";?>"></td>
 		</tr>
 		<tr>
 			<td>
