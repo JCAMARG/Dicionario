@@ -17,7 +17,7 @@ include(constant("SITE_ROOT")."/header.php");
 	$dbObj->query("DROP TABLE dicionario;");
 	$dbObj->query("DROP TABLE disciplinas;");
 
-	$dbObj->setupDatabase();
+	//$dbObj->setupDatabase();
 	$sql = "";
 	$sql = "SELECT ID_DISCIPLINA, NOME FROM disciplinas ORDER BY NOME;";
 	$result = $dbObj->query($sql);
