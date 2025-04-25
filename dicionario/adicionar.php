@@ -50,6 +50,10 @@ if (isset($erro)) {
 	$sql .= "SELECT ID_DISCIPLINA, NOME FROM disciplinas ";
 	$sql .= " ORDER BY NOME;";
 	$result = $dbObj->query($sql);
+
+	if (!$result) {
+		die("<p style='color: red;'>Erro na consulta: " . pg_last_error($dbObj->link_id) . "</p>");
+	}
 ?> 
  
 <form method="POST">
