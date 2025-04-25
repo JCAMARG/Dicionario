@@ -52,9 +52,11 @@ include(constant("SITE_ROOT")."/header.php");
 			<td colspan="2" class="htext" style="background-color:navy; color:white; padding:8">Você tem certeza que quer apagar o produto "<?=isset($palavra_orig)?$palavra_orig:"";?>"?</td>
 		<tr>
 		<tr>
-			<td colspan="2" style="text-align: center; padding: 12px;">
-		            <input class="subbut but-ap" type="submit" name="submit" value="Confirmar" class="subbut but-ap">
-		            <a class="subbut but" href="<?=SITE_URL;?>/dicionario">Cancelar</a>
+		        <td  style="text-align: center; padding: 8px;">
+		        	<input type="submit" name="submit" value="Confirmar" class="subbut but-ap">
+			</td>
+			<td style="text-align: center; padding: 8px;">
+		        	<a class="subbut but" href="<?=SITE_URL;?>/dicionario">Cancelar</a>
 		        </td>
 	    	</tr>
 	</table>
