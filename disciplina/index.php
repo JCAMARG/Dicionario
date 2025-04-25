@@ -18,18 +18,6 @@ include(constant("SITE_ROOT")."/header.php");
 	$sql .= "SELECT id_disciplina, nome FROM disciplinas ORDER BY nome;";
 	$result = $dbObj->query($sql);
 
-	if (!$result) {
-		die("<p style='color: red;'>Erro na consulta: " . pg_last_error($dbObj->link_id) . "</p>");
-	}
-
-	echo "<pre>";
-	var_dump($result);
-	echo "</pre>";
-
-	if (pg_num_rows($result) === 0) {
-		echo "<tr><td colspan='3'>Nenhuma disciplina encontrada.</td></tr>";
-	}
-
 	$countSql = "SELECT COUNT(*) FROM disciplinas";
 	$countResult = $dbObj->query($countSql);
 	
@@ -38,18 +26,6 @@ include(constant("SITE_ROOT")."/header.php");
 	    echo "<p>Total de registros: " . $countRow[0] . "</p>";
 	} else {
 	    echo "<p>Erro ao contar registros: " . pg_last_error($dbObj->link_id) . "</p>";
-	}
-
-	$dbObj = new mysql();
-	$sql = "SELECT id_disciplina, nome FROM disciplinas ORDER BY nome";
-	$result = $dbObj->query($sql);
-	
-	if (!$result) {
-	    echo "<p>Erro na consulta: " . pg_last_error($dbObj->link_id) . "</p>";
-	} else {
-	    while ($row = pg_fetch_assoc($result)) {
-	        echo "<p>" . $row['id_disciplina'] . " - " . $row['nome'] . "</p>";
-	    }
 	}
 
 ?>
