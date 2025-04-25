@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	extract($_POST);
 	$erro = "";
 	if (!$nome) {
-		$erro .= " Nome não pode ser vazio. ";
+		$erro .= " nome não pode ser vazio. ";
 	}
 	if (!$palavra) {
 		$erro .= " Palavra não pode ser vazio. ";
@@ -47,8 +47,8 @@ if (isset($erro)) {
 <?php
 	$dbObj = new mysql();
 	$sql = "";
-	$sql .= "SELECT ID_DISCIPLINA, NOME FROM disciplinas ";
-	$sql .= " ORDER BY NOME;";
+	$sql .= "SELECT id_disciplina, nome FROM disciplinas ";
+	$sql .= " ORDER BY nome;";
 	$result = $dbObj->query($sql);
 
 	if (!$result) {
@@ -69,7 +69,7 @@ if (isset($erro)) {
                     <?php
 					echo "<option></option>";
                         while ($row = pg_fetch_assoc($result)) {
-                            echo "<option value='".$row['ID_DISCIPLINA']."'>".$row['NOME']."</option>";
+                            echo "<option value='".$row['id_disciplina']."'>".$row['nome']."</option>";
                         }
                     ?>
                 </select>
