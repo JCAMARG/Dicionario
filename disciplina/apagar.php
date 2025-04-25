@@ -48,7 +48,7 @@ include(constant("SITE_ROOT")."/header.php");
 	<input type="hidden" name="id" value="<?=isset($id)?$id:"";?>">
 	<table>
 		<tr>
-			<td colspan="2" class="htext" style="background-color:navy; color:white;">Você tem certeza que quer apagar a categoria "<?=isset($nome)?$nome:"";?>"?</td>
+			<td colspan="2" class="htext" style="background-color:navy; color:white; padding:8;">Você tem certeza que quer apagar a categoria "<?=isset($nome)?$nome:"";?>"?</td>
 		<tr>
 		<tr>
 			<td>
