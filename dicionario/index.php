@@ -36,10 +36,10 @@ include(constant("SITE_ROOT")."/header.php");
 					echo $row["palavra_orig"];
 				echo "</td>";
 				echo "<td>";
-					echo "<a class='subbut' href='".constant("SITE_URL")."/dicionario/apagar.php?id=".$row["ID"]."'>APAGAR</a>";
+					echo "<a class='subbut' href='".constant("SITE_URL")."/dicionario/apagar.php?id=".$row["id"]."'>APAGAR</a>";
 				echo "</td>";
 				echo "<td>";
-					echo "<a class='subbut' href='".constant("SITE_URL")."/dicionario/editar.php?id=".$row["ID"]."'>EDITAR</a>";
+					echo "<a class='subbut' href='".constant("SITE_URL")."/dicionario/editar.php?id=".$row["id"]."'>EDITAR</a>";
 				echo "</td>";
 			echo "</tr>";
 		}
