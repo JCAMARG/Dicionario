@@ -51,13 +51,13 @@ include(constant("SITE_ROOT")."/header.php");
 			<td colspan="2" class="htext" style="background-color:navy; color:white; padding:8;">Você tem certeza que quer apagar a categoria "<?=isset($nome)?$nome:"";?>"?</td>
 		<tr>
 		<tr>
-			<td>
-				<input type="submit" name="submit" value="Sim" class="submit">
+		        <td  style="text-align: center; padding: 8px;">
+		        	<input class="subbut but-ap" type="submit" name="submit" value="Confirmar">
 			</td>
-			<td align="center">
-				<a href="<?=SITE_URL;?>/disciplina"><input class="submit" type="button" value="Não"></a>
-			</td>
-		</tr>
+			<td style="text-align: center; padding: 8px;">
+		        	<a class="subbut but" href="<?=SITE_URL;?>/disciplina">Cancelar</a>
+		        </td>
+	    	</tr>
 	</table>
 </form>
 
