@@ -53,10 +53,10 @@ include(constant("SITE_ROOT")."/header.php");
 					echo $row["nome"];
 				echo "</td>";
 				echo "<td style='background-color: #9ab4ff;'>";
-					echo "<a class='subbut' href='".constant("SITE_URL")."/dicionario/editar.php?id=".$row["id"]."&id_disciplina=" . $row["id_disciplina"] . "'>EDITAR</a>";
+					echo "<a class='subbut but-ed' href='".constant("SITE_URL")."/dicionario/editar.php?id=".$row["id"]."&id_disciplina=" . $row["id_disciplina"] . "'>EDITAR</a>";
 				echo "</td>";
 				echo "<td style='background-color: #f7acac;'>";
-					echo "<a class='subbut' href='".constant("SITE_URL")."/dicionario/apagar.php?id=".$row["id"]."'>APAGAR</a>";
+					echo "<a class='subbut but-ap' href='".constant("SITE_URL")."/dicionario/apagar.php?id=".$row["id"]."'>APAGAR</a>";
 				echo "</td>";
 			echo "</tr>";
 		}
