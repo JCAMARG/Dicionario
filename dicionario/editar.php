@@ -98,7 +98,7 @@ if (isset($erro)) {
 		                    <?php
 							echo "<option></option>";
 		                        while ($row = pg_fetch_assoc($resultDis)) {
-		                            $selected = ($row['id'] == $id_disciplina) ? "selected" : "";
+		                            $selected = ($row['id_disciplina'] == $id_disciplina) ? "selected" : "";
 					    echo "<option value='".$row['id']."' $selected>".$row['nome']."</option>";
 		                        }
 		                    ?>
