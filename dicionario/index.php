@@ -21,6 +21,16 @@ include(constant("SITE_ROOT")."/header.php");
 	$sql = "";
 	$sql .= "SELECT * FROM dicionario ORDER BY palavra_orig;";
 	$result = $dbObj->query($sql);
+
+	$countSql = "SELECT COUNT(*) FROM dicionario";
+	$countResult = $dbObj->query($countSql);
+	
+	if ($countResult) {
+	    $countRow = pg_fetch_row($countResult);
+	    echo "<p>Total de registros: " . $countRow[0] . "</p>";
+	} else {
+	    echo "<p>Erro ao contar registros: " . pg_last_error($dbObj->link_id) . "</p>";
+	}
 ?>
 
 <table class="lista">
