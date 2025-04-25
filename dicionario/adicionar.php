@@ -35,8 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 include(constant("SITE_ROOT")."/header.php");
  
 ?>
-  <div class="hback">
-    <p class="htext">Adicionar Palavra</p>
+<div class="admtitleback">
+    <p class="admtitletext">Adicionar Palavra</p>
 </div>
  
 <?php include(constant("SITE_ROOT")."/menu.php"); ?>
