@@ -96,25 +96,31 @@ p, a, td, th, input{
 }
 
 .subbut{
-	background-color:darkblue;
 	border:1px solid slategrey;
 	border-style:outset;
-	border-radius:8px;
-	padding: 2px 4px;
+	border-radius:6px;
+	padding: 2px 8px;
 	text-align: center;
 	text-decoration: none;
 	font-size: 60%;
 	display: inline-block;
 	color: white;
+}
 
+.but-ap{
+	background-color:red;
+}
+
+.but-ed{
+	background-color:darkblue;
 }
 
 .subbut:hover{
 	background-color:lightblue;
 	border:1px solid lightslategrey;
 	border-style:inset;
-	border-radius:8px;
-	padding: 2px 4px;
+	border-radius:6px;
+	padding: 2px 8px;
 	text-align: center;	
 	text-decoration: none;
 	display: inline-block;
