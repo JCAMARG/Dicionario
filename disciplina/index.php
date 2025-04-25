@@ -20,8 +20,16 @@ include(constant("SITE_ROOT")."/header.php");
 	$result = $dbObj->query($sql);
 
 	if (!$result) {
-    	echo "<p style='color: red;'>Erro na consulta: " . pg_last_error($dbObj->link_id) . "</p>";
-}
+		die("<p style='color: red;'>Erro na consulta: " . pg_last_error($dbObj->link_id) . "</p>");
+	}
+
+	echo "<pre>";
+	var_dump($result);
+	echo "</pre>";
+
+	if (pg_num_rows($result) === 0) {
+		echo "<tr><td colspan='3'>Nenhuma disciplina encontrada.</td></tr>";
+	}
 ?>
 
 <table class="lista">
