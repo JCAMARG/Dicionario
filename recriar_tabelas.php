@@ -8,10 +8,10 @@ $acao = $_GET['acao'] ?? '';
 switch ($acao) {
     case 'criar_disciplinas':
         $db->dropTable('dicionario');
-        $db->createDicionarioTable();
-    
         $db->dropTable('disciplinas');
+
         $db->createDisciplinaTable();
+        $db->createDicionarioTable();
     
         echo "Tabela 'disciplinas' recriada com sucesso!";
         break;
@@ -24,14 +24,13 @@ switch ($acao) {
         break;
 
     case 'ins_disc':
-        // Carregar dados na tabela 'disciplinas'
         $db->insertDisciplinaData();
     
         echo "Dados carregados na tabela 'disciplinas' com sucesso!";
         break;
 
     case 'ins_dici':
-        // Carregar dados na tabela 'dicionario'
+        $db->insertDisciplinaData();
         $db->insertDicionarioData();
     
         echo "Dados carregados na tabela 'dicionario' com sucesso!";
@@ -40,14 +39,14 @@ switch ($acao) {
     case 'restaurar':
         // Restaurar as tabelas (dropar e recriar)
         $db->dropTable('dicionario');
+        $db->dropTable('disciplinas');
+
+        $db->createDisciplinaTable();
         $db->createDicionarioTable();
+
+        $db->insertDisciplinaData();
         $db->insertDicionarioData();
     
-        $db->dropTable('disciplinas');
-        $db->createDisciplinaTable();
-        $db->insertDisciplinaData();
-       
-
         echo "Banco restaurado com sucesso!";
         break;
 
