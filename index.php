@@ -15,7 +15,7 @@ include(constant("SITE_ROOT")."/header.php");
                 <option value="ins_dici">Carregar dados Dicionário</option>
                 <option value="restaurar">Restaurar banco completo</option>
             </select>
-            <button class="but-confirma" type="submit">Processar</button>
+            <button class="but-confirma" type="submit" onclick="if(this.form.acao.value == '') { event.preventDefault(); }">Processar</button>
         </form>
     </div>
 </div>
