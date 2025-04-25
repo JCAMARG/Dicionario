@@ -14,9 +14,10 @@ include(constant("SITE_ROOT")."/header.php");
 <?php
 	$dbObj = new mysql();
 
+	
+	$dbObj->query("DROP TABLE disciplinas;");
 
 	$dbObj->setupDatabase();
-	$dbObj->query("DROP TABLE disciplinas;");
 	$sql = "";
 	$sql = "SELECT ID_DISCIPLINA, NOME FROM disciplinas ORDER BY NOME;";
 	$result = $dbObj->query($sql);
