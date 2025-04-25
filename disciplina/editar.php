@@ -42,8 +42,8 @@ include(constant("SITE_ROOT")."/header.php");
  
 ?>
  
- <div class="hback">
-    <p class="htext">EDITAR CATEGORIA</p>
+<div class="admtitleback">
+    <p class="admtitletext">EDITAR CATEGORIA</p>
 </div>
  
 <?php include(constant("SITE_ROOT")."/menu.php"); ?>
@@ -52,9 +52,10 @@ include(constant("SITE_ROOT")."/header.php");
  
 <?php
 if (isset($erro)) {
-	echo "<span style=\"color: red; font-style: italic;\">";
+	echo "<span style=\"color: white; font-style: italic;\">";
 	echo $erro;
 	echo "</span>";
+	<br><br>
 } 
 ?>
  
@@ -62,7 +63,7 @@ if (isset($erro)) {
 	<input type="hidden" name="id" value="<?=isset($id)?$id:"";?>">
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
-			<td>nome:</td>
+			<td>Nome:</td>
 			<td><input type="text" name="nome" style="padding: 3px; border:1px solid grey; border-style:inset;" value="<?=isset($nome)?$nome:"";?>"></td>
 		</tr>
 		<tr>
