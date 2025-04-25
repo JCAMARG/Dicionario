@@ -121,6 +121,9 @@
 		    			";
 				
 				$this->query($insertSql);
+
+				// Atualiza o valor da sequência associada ao SERIAL
+        			$this->query("SELECT setval(pg_get_serial_sequence('disciplinas', 'ID_DISCIPLINA'), (SELECT MAX(ID_DISCIPLINA) FROM disciplinas))");
 			}
 		}
 
@@ -197,6 +200,9 @@
 	     				";
 				
 				$this->query($insertSql);
+
+				// Atualiza a sequência do ID após os inserts manuais
+				$this->query("SELECT setval(pg_get_serial_sequence('dicionario', 'id'), (SELECT MAX(id) FROM dicionario))");
 			}
 		}
 	}
