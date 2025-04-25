@@ -7,7 +7,7 @@ $id = $_GET["id"]?$_GET["id"]:$_POST["id"];
 if ($id>0){
 	$dbObj = new mysql();
 	$sql = "";
-	$sql .= "SELECT * FROM disciplinas WHERE id = ".$id.";";
+	$sql .= "SELECT * FROM disciplinas WHERE id_disciplina = ".$id.";";
 	$result = $dbObj->query($sql);
 	if ($dbObj->affectedRows()== 0) {
 		header("Location: ".SITE_URL."/disciplina");
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$sql = "";
 		$sql .= " UPDATE disciplinas SET ";
 		$sql .= " nome = '".$nome."' ";
-		$sql .= " WHERE id = '".$id."'; ";
+		$sql .= " WHERE id_disciplina = '".$id."'; ";
 		$result = $dbObj->query($sql);
 		header("Location: ".SITE_URL."/disciplina");
 		exit;
