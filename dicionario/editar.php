@@ -107,8 +107,11 @@ if (isset($erro)) {
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2">
-				<input type="submit" name="submit" value="EDITAR">
+			<td style="width: 1%;">
+				&nbsp;
+			</td>
+			<td>
+				<input class="but-confirma" type="submit" name="submit" value="EDITAR">
 			</td>
 		</tr>
 	</table>
