@@ -72,7 +72,11 @@ if (isset($erro)) {
 
 	$result = $dbObj->query($sql);
 
-	$countSql = "SELECT COUNT(*) FROM disciplinas";
+	$countSql = "SELECT COUNT(*) FROM disciplinas ";
+	if (isset($pesq) && $pesq !== "") {
+	    $pesq_esc = pg_escape_string($dbObj->link_id, $pesq);
+	    $countSql .= "WHERE nome ILIKE '%$pesq_esc%' ";
+	}
 	$countResult = $dbObj->query($countSql);
 	
 	if ($countResult) {
