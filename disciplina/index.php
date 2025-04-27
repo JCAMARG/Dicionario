@@ -30,6 +30,13 @@ include(constant("SITE_ROOT")."/header.php");
 
 <div class="admtitleback">
     <p class="admtitletext">Cadastro de Disciplina</p>
+	<div class="admtitletext">
+        <!-- Combo Box para recriar tabelas -->
+        <form action="recriar_tabelas.php" method="GET"  style="margin: 0">
+            <input type="text" name="pesquisa" value="" style="width: 100%;">
+            <button class="button but-pesq" type="submit" onclick="if(this.form.acao.value == '') { event.preventDefault(); }">Pesquisar</button>
+        </form>
+    </div>
 </div>
 
 <?php
