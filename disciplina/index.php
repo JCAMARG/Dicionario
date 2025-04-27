@@ -24,9 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmar_apagar"])) {
 	}
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["pesquisar"])) {
-	$pesq = "";
-	$pesq = $_POST["filtro"];
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["pesquisar"])) {
+    $pesq = $_GET["filtro"];
 }
 
 include(constant("SITE_ROOT")."/header.php");
@@ -36,12 +35,10 @@ include(constant("SITE_ROOT")."/header.php");
 <div class="admtitleback" style="display: flex; justify-content: space-between; align-items: center;">
     <p class="admtitletext">Cadastro de Disciplina</p>
 	<div class="admtitletext">
-        <!-- Combo Box para recriar tabelas -->
-        <form action="index.php" method="GET"  style="margin: 0">
-            <input style="padding:3px;" type="text" name="filtro" value="<?=isset($pesq)?@$pesq:"";?>">
-            <button class="button but-pes" type="submit" onclick="if(this.form.acao.value == '') { event.preventDefault(); }">Pesquisar</button>
+        <form action="index.php" method="GET" style="margin: 0">
+	    <input style="padding:3px;" type="text" name="filtro" value="<?= isset($pesq) ? htmlspecialchars($pesq) : ""; ?>">
 	    <input class="button but-pes" type="submit" name="pesquisar" value="Pesquisar">
-        </form>
+	</form>
     </div>
 </div>
 
@@ -65,14 +62,13 @@ if (isset($erro)) {
 <?php
 	$dbObj = new mysql();
 	$sql = "";
-	$sql .= "SELECT id_disciplina, nome FROM disciplinas ";
-	
-	if (isset($pesq)) {
-		$sql .= "WHERE nome like '%$pesq' ";
-		
-	}
 
-	$sql .= "ORDER BY nome;";
+	$sql .= "SELECT id_disciplina, nome FROM disciplinas ";
+	if (isset($pesq) && $pesq !== "") {
+	    $pesq_esc = pg_escape_string($dbObj->link_id, $pesq);
+	    $sql .= "WHERE nome ILIKE '%$pesq_esc%' ";
+	}
+	$sql .= "ORDER BY nome";
 
 	$result = $dbObj->query($sql);
 
