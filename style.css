@@ -185,7 +185,8 @@ th {
 
 .input{
 	border-color: darkgrey;
-	border-style:inset;
+	border-style: inset;
+	border-radius: 5px;
 }
 
 .input:focus {
