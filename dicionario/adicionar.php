@@ -79,7 +79,7 @@ if (isset($erro)) {
 		<tr>
 			<td style="width: 1%;">Disciplina:</td>
 			<td>
-				<select style="width:179px; width: 100%;" name="disciplina">
+				<select style="width:179px; width: 100%; padding:3px;" name="disciplina">
 		                    <?php
 					echo "<option></option>";
 		                        while ($row = pg_fetch_assoc($result)) {
@@ -93,7 +93,7 @@ if (isset($erro)) {
 			<td style="width: 1%;">
 				&nbsp;
 			</td>
-			<td>
+			<td style="padding:8px 0;">
 				<input class="but-confirma" type="submit" name="submit" value="Adicionar">
 			</td>
 		</tr>
