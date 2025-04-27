@@ -11,7 +11,7 @@ include(constant("SITE_ROOT")."/header.php");
     include (constant("SITE_ROOT")."/menu.php");
 ?>
 
-<p><a class="button" href="<?=constant("SITE_URL");?>/dicionario/adicionar.php">ADICIONAR</a></p>
+<p><a class="button but-add" href="<?=constant("SITE_URL");?>/dicionario/adicionar.php">ADICIONAR</a></p>
 <?php
 	$dbObj = new mysql();
 	
