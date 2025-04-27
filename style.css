@@ -1,5 +1,6 @@
 p, a, td, th, input{
 	font-family: sans-serif;
+	border-radius: 6px;
 }
 
 th {
@@ -186,7 +187,6 @@ th {
 .input{
 	border-color: darkgrey;
 	border-style: inset;
-	border-radius: 5px;
 }
 
 .input:focus {
