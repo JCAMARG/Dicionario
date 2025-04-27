@@ -46,7 +46,7 @@ if (isset($erro)) {
 }
 ?>
 
-<p><a class="button" href="<?=constant("SITE_URL");?>/disciplina/adicionar.php">ADICIONAR</a></p>
+<p><a class="button but-add" href="<?=constant("SITE_URL");?>/disciplina/adicionar.php">ADICIONAR</a></p>
 <?php
 	$dbObj = new mysql();
 	$sql = "";
