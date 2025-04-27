@@ -64,10 +64,10 @@ if (isset($erro)) {
 <?php
 	$dbObj = new mysql();
 	$sql = "";
-	$sql .= "SELECT id_disciplina, nome FROM disciplinas";
+	$sql .= "SELECT id_disciplina, nome FROM disciplinas ";
 	
 	if (isset($pesq)) {
-		$sql .= "WHERE nome like '%$pesq'";
+		$sql .= "WHERE nome like '%$pesq' ";
 		
 	}
 
