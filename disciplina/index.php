@@ -24,8 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmar_apagar"])) {
 	}
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["pesquisa"])) {
-	$pesq = $_POST["pesquisa"];
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["pesquisar"])) {
+	$pesq = "";
+	$pesq = $_POST["filtro"];
 }
 
 include(constant("SITE_ROOT")."/header.php");
@@ -37,7 +38,7 @@ include(constant("SITE_ROOT")."/header.php");
 	<div class="admtitletext">
         <!-- Combo Box para recriar tabelas -->
         <form action="index.php" method="GET"  style="margin: 0">
-            <input style="padding:3px;" type="text" name="pesquisa" value="<?=isset($pesquisa)?@pesquisa:"";?>">
+            <input style="padding:3px;" type="text" name="filtro" value="<?=isset($pesq)?@$pesq:"";?>">
             <!--<button class="button but-pes" type="submit" onclick="if(this.form.acao.value <> '') { event.preventDefault(); }">Pesquisar</button>-->
 	    <input class="button but-pes" type="submit" name="pesquisar" value="Pesquisar">
         </form>
