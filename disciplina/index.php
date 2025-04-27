@@ -33,7 +33,7 @@ include(constant("SITE_ROOT")."/header.php");
 	<div class="admtitletext">
         <!-- Combo Box para recriar tabelas -->
         <form action="index.php" method="GET"  style="margin: 0">
-            <input type="text" name="pesquisa" value="">
+            <input style="padding:3px;" type="text" name="pesquisa" value="">
             <button class="button but-pes" type="submit" onclick="if(this.form.acao.value == '') { event.preventDefault(); }">Pesquisar</button>
 	    <input class="button but-pes" type="submit" name="submit" value="Pesquisar">
         </form>
