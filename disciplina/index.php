@@ -40,6 +40,8 @@ include(constant("SITE_ROOT")."/header.php");
     </div>
 </div>
 
+<br>
+
 <?php
 include (constant("SITE_ROOT")."/menu.php");
 
