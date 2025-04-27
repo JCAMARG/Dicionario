@@ -1,11 +1,25 @@
 <?php
 include("../config.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["pesquisar"])) {
+    $pesq = $_GET["filtro"];
+}
+
 include(constant("SITE_ROOT")."/header.php");
 
 ?>
 <div class="admtitleback">
-    <p class="admtitletext">Cadastro de Palavras</p>
+	<p class="admtitletext">Cadastro de Palavras</p>
+
+	<div class="admtitletext">
+		<form action="index.php" method="GET" style="margin: 0">
+			<input style="padding:3px;" type="text" name="filtro" value="<?= isset($pesq) ? htmlspecialchars($pesq) : ""; ?>">
+			<input class="button but-pes" type="submit" name="pesquisar" value="Pesquisar">
+		</form>
+	</div>
 </div>
+
+<br>
 
 <?php
     include (constant("SITE_ROOT")."/menu.php");
@@ -17,8 +31,13 @@ include(constant("SITE_ROOT")."/header.php");
 	
 	$sql = "";
 	$sql .= "SELECT * FROM dicionario ";
+	if (isset($pesq) && $pesq !== "") {
+	    $pesq_esc = pg_escape_string($dbObj->link_id, $pesq);
+	    $sql .= "WHERE palavra_orig ILIKE '%$pesq_esc%' or significado ILIKE '%$pesq_esc%' or nome ILIKE '%$pesq_esc%'";
+	}
 	$sql .= "INNER JOIN disciplinas ON dicionario.id_disciplina = disciplinas.id_disciplina ";
 	$sql .= "ORDER BY palavra_orig;";
+
 	$result = $dbObj->query($sql);
 
 	$countSql = "SELECT COUNT(*) FROM dicionario";
