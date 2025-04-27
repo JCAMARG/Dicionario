@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["pesquisar"])) {
 include(constant("SITE_ROOT")."/header.php");
 
 ?>
-<div class="admtitleback">
+<div class="admtitleback" style="display: flex; justify-content: space-between; align-items: center;">
 	<p class="admtitletext">Cadastro de Palavras</p>
 
 	<div class="admtitletext">
@@ -33,7 +33,7 @@ include(constant("SITE_ROOT")."/header.php");
 	$sql .= "SELECT * FROM dicionario ";
 	if (isset($pesq) && $pesq !== "") {
 	    $pesq_esc = pg_escape_string($dbObj->link_id, $pesq);
-	    $sql .= "WHERE palavra_orig ILIKE '%$pesq_esc%' or significado ILIKE '%$pesq_esc%' or nome ILIKE '%$pesq_esc%'";
+	    $sql .= "WHERE palavra_orig ILIKE '%$pesq_esc%' or significado ILIKE '%$pesq_esc%' or nome ILIKE '%$pesq_esc%' ";
 	}
 	$sql .= "INNER JOIN disciplinas ON dicionario.id_disciplina = disciplinas.id_disciplina ";
 	$sql .= "ORDER BY palavra_orig;";
