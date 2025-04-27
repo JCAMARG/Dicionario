@@ -1,4 +1,4 @@
-p, a, td, th, input{
+p, a, td, th, input, select{
 	font-family: sans-serif;
 	border-radius: 6px;
 }
