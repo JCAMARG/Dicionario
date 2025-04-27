@@ -38,8 +38,8 @@ include(constant("SITE_ROOT")."/header.php");
         <!-- Combo Box para recriar tabelas -->
         <form action="index.php" method="GET"  style="margin: 0">
             <input style="padding:3px;" type="text" name="pesquisa" value="<?=isset($pesquisa)?@pesquisa:"";?>">
-            <!--<button class="button but-pes" type="submit" onclick="if(this.form.acao.value <> '') { event.preventDefault(); }">Pesquisar</button>->
-	    <input class="button but-pes" type="submit" name="pesquisa" value="Pesquisar">
+            <!--<button class="button but-pes" type="submit" onclick="if(this.form.acao.value <> '') { event.preventDefault(); }">Pesquisar</button>-->
+	    <input class="button but-pes" type="submit" name="pesquisar" value="Pesquisar">
         </form>
     </div>
 </div>
