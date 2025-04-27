@@ -24,6 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["confirmar_apagar"])) {
 	}
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["pesquisa"])) {
+	$pesq = (int)$_POST["pesquisa"];
+}
+
 include(constant("SITE_ROOT")."/header.php");
 
 ?>
@@ -35,7 +39,7 @@ include(constant("SITE_ROOT")."/header.php");
         <form action="index.php" method="GET"  style="margin: 0">
             <input style="padding:3px;" type="text" name="pesquisa" value="<?=isset($pesquisa)?@pesquisa:"";?>">
             <button class="button but-pes" type="submit" onclick="if(this.form.acao.value <> '') { event.preventDefault(); }">Pesquisar</button>
-	    <!-- <input class="button but-pes" type="submit" name="submit" value="Pesquisar"> -->
+	    <input class="button but-pes" type="submit" name="submit" value="Pesquisar">
         </form>
     </div>
 </div>
@@ -60,7 +64,15 @@ if (isset($erro)) {
 <?php
 	$dbObj = new mysql();
 	$sql = "";
-	$sql .= "SELECT id_disciplina, nome FROM disciplinas ORDER BY nome;";
+	$sql .= "SELECT id_disciplina, nome FROM disciplinas";
+	
+	if (isset($pesq)) {
+		$sql .= "WHERE nome like '%$pesq'";
+		
+	}
+
+	$sql .= "ORDER BY nome;";
+
 	$result = $dbObj->query($sql);
 
 	$countSql = "SELECT COUNT(*) FROM disciplinas";
