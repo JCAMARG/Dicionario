@@ -4,7 +4,7 @@ include(constant("SITE_ROOT")."/header.php");
 
 ?>
 <div class="admtitleback">
-    <p class="admtitletext">PROJETO - Cadastro de Palavras</p>
+    <p class="admtitletext">Cadastro de Palavras</p>
 </div>
 
 <?php
