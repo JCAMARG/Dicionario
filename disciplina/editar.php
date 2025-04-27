@@ -43,7 +43,7 @@ include(constant("SITE_ROOT")."/header.php");
 ?>
  
 <div class="admtitleback">
-    <p class="admtitletext">EDITAR CATEGORIA</p>
+    <p class="admtitletext">EDITAR DISCIPLINA</p>
 </div>
  
 <?php include(constant("SITE_ROOT")."/menu.php"); ?>
