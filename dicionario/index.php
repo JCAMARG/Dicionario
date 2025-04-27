@@ -40,7 +40,12 @@ include(constant("SITE_ROOT")."/header.php");
 
 	$result = $dbObj->query($sql);
 
-	$countSql = "SELECT COUNT(*) FROM dicionario";
+	$countSql = "SELECT COUNT(*) FROM dicionario ";
+	$countSql .= "INNER JOIN disciplinas ON dicionario.id_disciplina = disciplinas.id_disciplina ";
+	if (isset($pesq) && $pesq !== "") {
+	    $pesq_esc = pg_escape_string($dbObj->link_id, $pesq);
+	    $countSql .= "WHERE palavra_orig ILIKE '%$pesq_esc%' or significado ILIKE '%$pesq_esc%' or nome ILIKE '%$pesq_esc%' ";
+	}
 	$countResult = $dbObj->query($countSql);
 	
 	if ($countResult) {
