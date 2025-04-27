@@ -28,13 +28,14 @@ include(constant("SITE_ROOT")."/header.php");
 
 ?>
 
-<div class="admtitleback">
+<div class="admtitleback" style="display: flex; justify-content: space-between; align-items: center;">
     <p class="admtitletext">Cadastro de Disciplina</p>
 	<div class="admtitletext">
         <!-- Combo Box para recriar tabelas -->
-        <form action="recriar_tabelas.php" method="GET"  style="margin: 0">
-            <input type="text" name="pesquisa" value="" style="width: 100%;">
-            <button class="button but-pesq" type="submit" onclick="if(this.form.acao.value == '') { event.preventDefault(); }">Pesquisar</button>
+        <form action="index.php" method="GET"  style="margin: 0">
+            <input type="text" name="pesquisa" value="">
+            <button class="button but-pes" type="submit" onclick="if(this.form.acao.value == '') { event.preventDefault(); }">Pesquisar</button>
+	    <input class="button but-pes" type="submit" name="submit" value="Pesquisar">
         </form>
     </div>
 </div>
