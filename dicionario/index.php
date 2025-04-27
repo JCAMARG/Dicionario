@@ -31,11 +31,11 @@ include(constant("SITE_ROOT")."/header.php");
 	
 	$sql = "";
 	$sql .= "SELECT * FROM dicionario ";
+	$sql .= "INNER JOIN disciplinas ON dicionario.id_disciplina = disciplinas.id_disciplina ";
 	if (isset($pesq) && $pesq !== "") {
 	    $pesq_esc = pg_escape_string($dbObj->link_id, $pesq);
 	    $sql .= "WHERE palavra_orig ILIKE '%$pesq_esc%' or significado ILIKE '%$pesq_esc%' or nome ILIKE '%$pesq_esc%' ";
 	}
-	$sql .= "INNER JOIN disciplinas ON dicionario.id_disciplina = disciplinas.id_disciplina ";
 	$sql .= "ORDER BY palavra_orig;";
 
 	$result = $dbObj->query($sql);
