@@ -365,5 +365,17 @@ span{
 		opacity: 1;
 		transform: translateY(0);
 	}
+
+	.tooltip-wrapper::before {
+		content: "💬";  /* Ícone de balão de comentário */
+		margin-right: 5px;
+		font-size: 16px;
+		color: #007bff;
+	}
+	
+	.tooltip-wrapper:hover::after {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
