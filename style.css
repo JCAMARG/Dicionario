@@ -265,6 +265,13 @@ input[type="text"] {
 	background-image: linear-gradient(darkred,firebrick);
 }
 
+.flexheader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
 span{
 	background-color:red;
 	border-radius:3px;
@@ -309,6 +316,11 @@ span{
 
 	.usersubmit {
 		width: 100%;
+	}
+
+	.flexheader {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 
 	td, th {
