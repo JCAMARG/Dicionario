@@ -2,7 +2,7 @@
 include("./config.php");
 include(constant("SITE_ROOT")."/header.php");
 ?>
-<div class="admtitleback" style="display: flex; justify-content: space-between; align-items: center;">
+<div class="admtitleback flexheader">
     <p class="admtitletext">HOME - PROJETO DICIONARIO</p>
     <div class="admtitletext">
         <!-- Combo Box para recriar tabelas -->
