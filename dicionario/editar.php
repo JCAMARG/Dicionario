@@ -84,18 +84,18 @@ if (isset($erro)) {
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
 			<td style="width: 1%;">Palavra:</td>
-			<td><input type="text" name="palavra_orig" style="padding: 3px; border:1px solid grey; border-style:inset; width: 100%;" value="<?=isset($palavra_orig)?$palavra_orig:"";?>"></td>
+			<td><input type="text" name="palavra_orig" value="<?=isset($palavra_orig)?$palavra_orig:"";?>"></td>
 		</tr>
 
 		<tr>
 			<td style="width: 1%;">Significado:</td>
-			<td><input type="text" name="significado" style="padding: 3px; border:1px solid grey; border-style:inset; width: 100%;" value="<?=isset($significado)?$significado:"";?>"></td>
+			<td><input type="text" name="significado" value="<?=isset($significado)?$significado:"";?>"></td>
 		</tr>
 		
 		<tr>
 			<td style="width: 1%;">Disciplinas:</td>
 			<td>
-				<select style="width:179px; padding:3px; width: 100%;" name="id_disciplina">
+				<select style="padding:3px; width: 100%;" name="id_disciplina">
 		                    <?php
 					echo "<option></option>";
 		                        while ($row = pg_fetch_assoc($resultDis)) {
