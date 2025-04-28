@@ -32,7 +32,7 @@ include(constant("SITE_ROOT")."/header.php");
 
 ?>
 
-<div class="admtitleback" style="display: flex; justify-content: space-between; align-items: center;">
+<div class="admtitleback flexheader">
     <p class="admtitletext">Cadastro de Disciplina</p>
 	<div class="admtitletext">
         <form action="index.php" method="GET" style="margin: 0">
