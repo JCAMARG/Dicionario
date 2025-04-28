@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["pesquisar"])) {
 include(constant("SITE_ROOT")."/header.php");
 
 ?>
-<div class="admtitleback" style="display: flex; justify-content: space-between; align-items: center;">
+<div class="admtitleback flexheader">
 	<p class="admtitletext">Cadastro de Palavras</p>
 
 	<div class="admtitletext">
