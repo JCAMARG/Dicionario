@@ -59,7 +59,7 @@ include(constant("SITE_ROOT")."/header.php");
 <table class="lista">
 	<tr>
 		<th style="background-color: #9ab4ff;">PALAVRA</th>
-		<th style="background-color: #9ab4ff;">SIGNIFICADO</th>
+		<th style="background-color: #9ab4ff;" class="significado">SIGNIFICADO</th>
 		<th style="background-color: #9ab4ff;">DISCIPLINA</th>
 		<th style="background-color: #9ab4ff;">EDITAR</th>
 		<th style="background-color: #f7acac;">APAGAR</th>
