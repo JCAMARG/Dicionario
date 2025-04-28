@@ -68,9 +68,11 @@ include(constant("SITE_ROOT")."/header.php");
 		while ($row = pg_fetch_assoc ($result)) {
 			echo "<tr class='linhalista'>";
 				echo "<td class='linhalista'>";
-					echo $row["palavra_orig"];
+					echo "<span class='tooltip-wrapper' data-significado='" . htmlspecialchars($row["significado"], ENT_QUOTES) . "'>";
+						echo $row["palavra_orig"];
+					echo "</span>";
 				echo "</td>";
-				echo "<td class='linhalista'>";
+				echo "<td class='linhalista significado'>";
 					echo $row["significado"];
 				echo "</td>";
 				echo "<td class='linhalista'>";
