@@ -13,7 +13,7 @@ include(constant("SITE_ROOT")."/header.php");
 
 	<div class="admtitletext">
 		<form action="index.php" method="GET" style="margin: 0">
-			<input style="padding:3px;" type="text" name="filtro" value="<?= isset($pesq) ? htmlspecialchars($pesq) : ""; ?>">
+			<input style="width: 65%;" type="text" name="filtro" value="<?= isset($pesq) ? htmlspecialchars($pesq) : ""; ?>">
 			<input class="button but-pes" type="submit" name="pesquisar" value="Pesquisar">
 		</form>
 	</div>
