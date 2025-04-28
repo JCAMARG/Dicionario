@@ -70,11 +70,11 @@ if (isset($erro)) {
 	<table class="lista" style="border:1px solid slategrey; border-style:outset;">
 		<tr>
 			<td style="width: 1%;">Palavra:</td>
-			<td><input type="text" name="palavra" value="<?=isset($palavra)?$palavra:"";?>" style="width: 100%;"></td>
+			<td><input type="text" name="palavra" value="<?=isset($palavra)?$palavra:"";?>"></td>
 		</tr>
 		<tr>
 			<td style="width: 1%;">Significado:</td>
-			<td><input type="text" name="significado" value="<?=isset($significado)?$significado:"";?>"  style="width: 100%;"></td>
+			<td><input type="text" name="significado" value="<?=isset($significado)?$significado:"";?>"></td>
 		</tr>
 		<tr>
 			<td style="width: 1%;">Disciplina:</td>
