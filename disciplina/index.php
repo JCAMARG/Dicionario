@@ -53,8 +53,6 @@ if (isset($erro)) {
 	echo "<span style=\"color: white; font-style: italic; padding: 5;\">";
 	echo $erro;
 	echo "</span>";
-	
-	?><br><?php
 }
 ?>
 
