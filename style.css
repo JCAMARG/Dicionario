@@ -277,4 +277,5 @@ span{
 	animation-duration: 1.5s;
 	animation-iteration-count: 6s;
 	animation-direction: alternate;
+	display: block;
 }
