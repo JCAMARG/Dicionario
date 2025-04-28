@@ -79,7 +79,7 @@ if (isset($erro)) {
 		<tr>
 			<td style="width: 1%;">Disciplina:</td>
 			<td>
-				<select style="width:179px; width: 100%; padding:3px;" name="disciplina">
+				<select style="width: 100%; padding:3px;" name="disciplina">
 		                    <?php
 					echo "<option></option>";
 		                        while ($row = pg_fetch_assoc($result)) {
