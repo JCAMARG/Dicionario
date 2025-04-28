@@ -12,8 +12,8 @@ include(constant("SITE_ROOT")."/header.php");
 	<p class="admtitletext">Cadastro de Palavras</p>
 
 	<div class="admtitletext">
-		<form action="index.php" method="GET" style="margin: 0">
-			<input style="width: 65%;" type="text" name="filtro" value="<?= isset($pesq) ? htmlspecialchars($pesq) : ""; ?>">
+		<form action="index.php" method="GET" style="margin: 0; width: 100%;">
+			<input style="width: auto;" type="text" name="filtro" value="<?= isset($pesq) ? htmlspecialchars($pesq) : ""; ?>">
 			<input class="button but-pes" type="submit" name="pesquisar" value="Pesquisar">
 		</form>
 	</div>
