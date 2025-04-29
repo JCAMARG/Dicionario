@@ -17,7 +17,7 @@ if ($id>0){
 	$row = pg_fetch_assoc($result);
 	extract($row);
 } else {
-		header ("Location: ".SITE_URL."/dicionario");
+		header ("Location: ".SITE_URL."/dicionario/index.php");
 		exit;
 }
 
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$sql .= " id_disciplina = '".$id_disciplina."' ";
 		$sql .= " WHERE ID = '".$id."'; ";
 		$result = $dbObj->query($sql);
-		header("Location: ".SITE_URL."/dicionario");
+		header("Location: ".SITE_URL."/dicionario/index.php");
 		exit;
 	}
 }
