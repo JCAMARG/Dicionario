@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$sql .= " VALUES ";
 		$sql .= " ('".$nome."')";
 		$result = $dbObj->query($sql);
-		header("Location: ".SITE_URL."/disciplina");
+		header("Location: ".SITE_URL."/disciplina/index.php");
 		exit;
 	}
 }
