@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$sql .= " VALUES ";
 		$sql .= " ('".$palavra."', '".$significado."', '".$disciplina."')";
 		$result = $dbObj->query($sql);
-		header("Location: ".SITE_URL."/dicionario");
+		header("Location: ".SITE_URL."/dicionario/index.php");
 		exit;
 	}
 }
