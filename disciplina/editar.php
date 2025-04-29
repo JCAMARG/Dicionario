@@ -10,13 +10,13 @@ if ($id>0){
 	$sql .= "SELECT * FROM disciplinas WHERE id_disciplina = ".$id.";";
 	$result = $dbObj->query($sql);
 	if ($dbObj->affectedRows()== 0) {
-		header("Location: ".SITE_URL."/disciplina");
+		header("Location: ".SITE_URL."/disciplina/index.php");
 		exit;
 	}
 	$row = pg_fetch_assoc($result);
 	extract($row);
 } else {
-		header ("Location: ".SITE_URL."/disciplina");
+		header ("Location: ".SITE_URL."/disciplina/index.php");
 		exit;
 }
 
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$sql .= " nome = '".$nome."' ";
 		$sql .= " WHERE id_disciplina = '".$id."'; ";
 		$result = $dbObj->query($sql);
-		header("Location: ".SITE_URL."/disciplina");
+		header("Location: ".SITE_URL."/disciplina/index.php");
 		exit;
 	}
 }
