@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$sql .= " DELETE FROM dicionario ";
 	$sql .= " WHERE id = '".$id."'; ";
 	$result = $dbObj->query($sql);
-	header("Location: ".SITE_URL."/dicionario");
+	header("Location: ".SITE_URL."/dicionario/index.php");
 	exit;
 	
 }
@@ -56,7 +56,7 @@ include(constant("SITE_ROOT")."/header.php");
 		        	<input type="submit" name="submit" value="Confirmar" class="subbut but-ap">
 			</td>
 			<td style="text-align: center; padding: 8px;">
-		        	<a class="subbut but" href="<?=SITE_URL;?>/dicionario">Cancelar</a>
+		        	<a class="subbut but" href="<?=SITE_URL;?>/dicionario/index.php">Cancelar</a>
 		        </td>
 	    	</tr>
 	</table>
