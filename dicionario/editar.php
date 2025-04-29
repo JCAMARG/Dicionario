@@ -11,7 +11,7 @@ if ($id>0){
 	$sql .= "SELECT * FROM dicionario WHERE id = ".$id.";";
 	$result = $dbObj->query($sql);
 	if ($dbObj->affectedRows()== 0) {
-		header("Location: ".SITE_URL."/dicionario");
+		header("Location: ".SITE_URL."/dicionario/index.php");
 		exit;
 	}
 	$row = pg_fetch_assoc($result);
