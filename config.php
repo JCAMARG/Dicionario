@@ -17,10 +17,10 @@
 	define("_DB_PASS", "");
 	define("_DB_NAME", "projeto_lab");
 	*/
-	define("_DB_HOST", "dpg-d058nn95pdvs73esracg-a");
+	define("_DB_HOST", "dpg-d19fbh3e5dus738tstr0-a");
 	define("_DB_USER", "projeto_lab_user");
-	define("_DB_PASS", "CBTtiRoIvhWn71vmUAWNXlPTpEQ52XEf");
-	define("_DB_NAME", "projeto_lab");
+	define("_DB_PASS", "IfCsr35O6ZsunHXa1pyG8PObvAK0tjXR");
+	define("_DB_NAME", "projeto_lab_lgrz");
 	
 	include(SITE_ROOT."/mysql.php");
 ?>
